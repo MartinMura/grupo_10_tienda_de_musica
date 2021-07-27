@@ -1,0 +1,5 @@
+botones-header: #FF0004
+links-footer y filtros: #47525E
+lista-carrito: #6C6C6C
+links-login y botones: #00A6FF
+
