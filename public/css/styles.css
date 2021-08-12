@@ -454,7 +454,7 @@ hr{
     display: flex;
     position: relative;
     justify-content: center;
-    top: -50px;
+    
     
 }
 .producto-destacado img{
@@ -464,28 +464,15 @@ hr{
 
 .producto-destacado li{
     color: #47525E;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
+    padding: 7px;
+    
 }
 
 .bottom-main h4 {
     position: relative;
-    left: 44%;
-    top: 55px;
-    font-size: 20px;
-}
-
-.arrow1 {
-    position: relative;
-    bottom: -115px ;
-    left: 35%;
-    font-size: 30px;
     
+    font-size: 20px;
+    text-align: center;
 }
 
-
-.arrow2 {
-    position: relative;
-    left: 65%;
-    bottom: -50px;
-    font-size: 30px;
-}
