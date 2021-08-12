@@ -405,3 +405,87 @@ div.form-right{
     color: white;
 
 }
+
+.main-home{
+    display: flex;
+    justify-content: space-around;
+    
+    
+}
+
+.vidriera1{
+    width: 70%;
+    height: 140%;
+    margin: 10px 40px;
+    max-height: 100%;
+    
+}
+
+.vidriera2{
+    width: 40%;
+    height: 140%;
+    position: relative;
+    left: 45%;
+    margin: 10px 40px;
+    max-height: 100%;
+}
+
+.cds-home {
+    width: 70%;
+    padding: 20px;
+    position: relative;
+    left: 42%;
+}
+
+.descripcion-home{
+
+    position: relative;
+    left: 59%;
+}
+
+hr{
+    border: solid 1px white;
+    width: 90%;
+    position: relative;
+    bottom: -20px;
+}
+
+.producto-destacado{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    top: -50px;
+    
+}
+.producto-destacado img{
+    width: 10%;
+    background-color: white;
+}
+
+.producto-destacado li{
+    color: #47525E;
+    margin-bottom: 5px;
+}
+
+.bottom-main h4 {
+    position: relative;
+    left: 44%;
+    top: 55px;
+    font-size: 20px;
+}
+
+.arrow1 {
+    position: relative;
+    bottom: -115px ;
+    left: 35%;
+    font-size: 30px;
+    
+}
+
+
+.arrow2 {
+    position: relative;
+    left: 65%;
+    bottom: -50px;
+    font-size: 30px;
+}
