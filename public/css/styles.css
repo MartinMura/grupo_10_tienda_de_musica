@@ -524,6 +524,8 @@ img.miniatura2{
     top: 60px;
     max-width: 100px;
     
+    font-size: 20px;
+    text-align: center;
 }
 .top-main-detalle img{
     margin-top: 5px;
