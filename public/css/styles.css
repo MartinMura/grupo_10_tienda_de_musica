@@ -1,109 +1,103 @@
-*   {
+* {
     box-sizing: border-box;
 }
 
-body    {
+body {
     background-color: black;
     color: white;
     font-family: 'Bree Serif', serif;
 }
 
-
+/* inicia codigo header */
 nav {
     display: flex;
     justify-content: space-around;
     height: 50px;
     border-bottom: white solid 5px;
+    width: 100%;
 }
 
 nav img {
     width: 150px;
+    
+
+
 }
 
-nav button{
+nav button {
     background-color: red;
     color: white;
     border-radius: 25px;
     border: solid black 1px;
     width: 150px;
     margin-left: 5px;
+    width: 100%;
 }
 
-.header-left    {
+button.registrate-button{
+    max-width: 100%;
+    width: 150px;
+}
+
+
+
+.header-left {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 350px
-    
-
 }
 
 
-.header-right  {
+.header-right {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 125px
-
+    width: 250px
 }
 
-.fa-shopping-cart{
+.fa-shopping-cart {
     color: white;
 }
 
+.login-button{
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
 
-div.imagenes{
+    text-decoration: none;
+    color: initial;
+}
+
+/* inicia codigo login */
+.main-login{
+    height: 550px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
     position: relative;
-    
-}
-.banda-login-1{
+}  
 
+.main-login img{
     width: 40%;
-    height: 250px;
-    position: relative;
-    margin: 70px 0px;
-    z-index: 0;
+    height: 60%;
+    margin-top: 50px;
+
 
 }
 
-
-.banda-login-2{
-
-    width: 40%;
-    height: 250px;
-    position: relative;
-    z-index: 0;
-    left: 20%;
-    bottom: 70px;
-
-}
-
-
-.form-login{
+.main-login form{
     position: absolute;
-    background-color: black;
-    border: white solid;
     width: 350px;
     height: 350px;
-    
+    left: 35%;
+    top: 30px;
+    background-color: black;
+    border: white solid;
     border-radius: 5%;
-    top: 13%;
-    right: 35%;
-    z-index: 10;
-
-
-}
-.div-form{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    padding: 50px 10px ;
     
-
+    
 }
+
 
 .usuario{
     margin-left: 50px;
@@ -157,12 +151,17 @@ div.imagenes{
 }
 
 
-footer{
-    margin: 0px 10px;
+
+/* inicia footer */
+
+footer {
+    margin: 0px 10px 0px 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 100px;
+    width: 100%;
+    
 }
 
 .left-footer {
@@ -180,7 +179,7 @@ footer{
 
 }
 
-.center-footer img{
+.center-footer img {
     width: 50%;
     margin-left: 29%;
 
@@ -191,7 +190,7 @@ footer{
 
 }
 
-div.iconos-footer{
+div.iconos-footer {
 
     display: flex;
     justify-content: space-evenly;
@@ -200,153 +199,110 @@ div.iconos-footer{
 
 }
 
+
+/* inicia codigo register */
+
 main.register{
+    height: 300px;
+}
+
+div.register-box{
+    margin: auto;
+    margin-top: 10px;
     position: relative;
-    left: 3%;
-    top: 50%;
-    width: 90%;
-    margin: 20px 30px;
-    border: solid white 2px;
-    border-radius: 30px;
-    padding: 20px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-evenly;
-    align-items: center;
-
-}
-
-.angus {
-    
-    
-    width: 50%;
-    padding: 20px;
-
-    
-    
+    padding-top: 10px;
+    padding-bottom: 40px;
+    border: white solid;
+    border-radius: 5px;
+    max-width: 800px;
+    width: 100%;
+    height: 400px;
     
 }
 
-.form-register {
+div.register-box img{
+    margin-left: 50px;
+    max-width: 300px;
+    width: 100%;
+    height: 346px;
+    
+}
+
+.register-box form{
+    width: 400px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    flex-flow: row;
-    
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: flex-start;
 }
-
-.form-register input {
-    border-radius: 10px;
-    border: solid white 1px;
-}
-
-div.form-left{
-    display: flex;
-    flex-wrap: wrap;
-    flex-flow: column;
-    align-content: center;
-    
+.register-box form label{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 190px;
 
 }
 
-div.form-right{
-    display: flex;
-    flex-wrap: wrap;
-    flex-flow: column;
-    align-content: center;
-
-}
-
-.form-left label{
-
-    margin-top: 35px;
-    margin-bottom: 10px;
-    color: #47525E;
-    
-
-    
-}
-
-.form-right label{
-
-    margin-top: 35px;
-    margin-bottom: 10px;
-    color: #47525E;
-    
-
-    
-}
-
-.terminos{
-    position: relative;
-    left: -30%;
-    bottom: 100px;
-}
-
-.terminos button{
-
-    
-    position: relative;
-    top: 40px;
-    left: -80px;
-    border-radius: 10px;
-    background-color: #00A6FF;
-    border: 1px solid white;
-    color: white;
-    padding: 7px;
+.register-box form input{
+    max-width: 190px;
+    height: 20px;
 }
 
 
-.body-shopping-list{
+
+/* inicia codigo shopping-list */
+
+.body-shopping-list {
 
     background-color: #6C6C6C;
 }
 
-.header-shopping-list{
+.header-shopping-list {
     background-color: black;
 }
 
-.main-shopping-list{
+.main-shopping-list {
     background-color: white;
     color: black;
     margin: 20px 200px;
     max-height: 800px;
 }
 
-.main-shopping-list h2{
+.main-shopping-list h2 {
 
-    margin:auto;
+    margin: auto;
     padding: 40px 40px;
     font-weight: lighter;
-    
+
 }
 
 .shopping-article {
     display: flex;
     border-top: solid 2px rgba(0, 0, 0, 40%);
     border-bottom: solid 2px rgba(0, 0, 0, 40%);
-    
+
     width: 90%;
     margin: auto;
-    
+
 }
 
 
 
-.shopping-article img{
+.shopping-article img {
     display: inline-block;
     max-width: 15%;
     margin: 20px 30px;
     border: #6C6C6C solid 1px;
-    
+
 }
 
-.cantidad-shopping h4{
+.cantidad-shopping h4 {
 
     margin: 20px 35px;
 }
 
-.cantidad-shopping div.number{
+.cantidad-shopping div.number {
     margin: 20px 50px;
     border: solid 1px #47525E;
     width: 30px;
@@ -357,35 +313,35 @@ div.form-right{
     opacity: 60%;
 }
 
-.precio-shopping{
+.precio-shopping {
     margin: auto;
 }
 
-.total-envio{
+.total-envio {
 
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    
-    
+
+
 }
 
-.total-envio div{
+.total-envio div {
     margin-right: 140px;
 }
 
 .total-envio h2 {
     margin-right: 70px;
-    
-    
+
+
 }
 
-.buttons-shopping{
+.buttons-shopping {
     display: flex;
     justify-content: right;
     position: relative;
     left: 60%;
-    
+
 }
 
 .buttons-shopping a {
@@ -396,7 +352,7 @@ div.form-right{
     color: #2E90FD;
 }
 
-.buttons-shopping input{
+.buttons-shopping input {
 
     position: relative;
     right: 60px;
@@ -406,86 +362,246 @@ div.form-right{
 
 }
 
-.main-home{
+/* inicia codigo index */
+
+.main-index{
+    background-image: url("/images/images/home-blurred-2.jpg");
+    background-repeat: no-repeat;
+    height: 650px;
+    background-size: 100% 100%;
+}
+
+.main-index h3{
     display: flex;
-    justify-content: space-around;
-    
-    
-}
-
-.vidriera1{
-    width: 70%;
-    height: 140%;
-    margin: 10px 40px;
-    max-height: 100%;
-    
-}
-
-.vidriera2{
-    width: 40%;
-    height: 140%;
-    position: relative;
-    left: 45%;
-    margin: 10px 40px;
-    max-height: 100%;
-}
-
-.cds-home {
-    width: 70%;
-    padding: 20px;
-    position: relative;
-    left: 42%;
-}
-
-.descripcion-home{
-
-    position: relative;
-    left: 59%;
-}
-
-hr{
-    border: solid 1px white;
-    width: 90%;
-    position: relative;
-    bottom: -20px;
-}
-
-.producto-destacado{
-    display: flex;
-    position: relative;
+    margin: auto;
     justify-content: center;
-    top: -50px;
-    
-}
-.producto-destacado img{
-    width: 10%;
-    background-color: white;
+    align-items: center;
+    position: relative;
+    font-size: 40px;
+    top: 30%;
+    text-align: 50%;
+    color: gray;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
-.producto-destacado li{
+.main-index button{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    top: 35%;
+    padding: 15px 30px;
+    background-color: transparent;
+    border-color: black;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    color: gray;
+}
+
+.main-index p {
+    width: 300px;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    position: relative;
+    top: 25%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-index-bottom{
+    height: 1000px;
+    border-top: solid white 5px;
+    margin-top: 1px;
+    border-bottom: solid white 5px;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+
+}
+
+.main-index-bottom div{
+    display: flex;
+    flex: wrap;
+    justify-content: space-around;
+
+}
+.main-index-bottom div img{
+    max-width: 100%;
+    width: 650px;
+}
+
+.main-index-bottom div {
+    width: 50%;
+    border: 3px #000 solid;
+    filter: blur(7px);
+    z-index: 0;
+    
+}
+
+.main-index-bottom h3{
+
+    z-index: 1;
+    position: absolute;
+    font-size: 3vw;
+    text-shadow: 1px 0 0 gray, 0 -1px 0 gray, 0 1px 0 gray, -1px 0 0 gray;
+    visibility: hidden;
+
+    
+}
+
+.main-index-bottom div:hover h3{
+    visibility: visible;
+
+}
+
+
+.main-index-bottom div:hover{
+    transition-duration: 700ms;
+    filter: blur(0px);
+    
+
+}
+
+
+
+
+
+
+
+.main-index-bottom h3.guitarras-index{
+    left: 30%;
+    margin-top: 60px;
+    
+
+}
+
+.main-index-bottom h3.percusion-index{
+    margin-top: 60px;
+    left: 60%;
+}
+
+.main-index-bottom h3.viento-index{
+    left: 15%;
+    top: 50%;
+
+}
+
+.main-index-bottom h3.microfonos-index{
+    top: 50%;
+    left: 60%;
+}
+
+/* inicia codigo detalle-producto top */
+
+main.top-main-detalle{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+main.top-main-detalle div{
+    display: inline-block;
+}
+
+section.miniaturas{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 40px;
+    margin-right: 10px;
+}
+
+img.miniatura{
+    position: relative;
+    
+}
+
+img.miniatura2{
+    position: relative;
+    top: 60px;
+    max-width: 100px;
+    
+}
+.top-main-detalle img{
+    margin-top: 5px;
+    width: 50px;
+}
+
+img.producto{
+    max-width: 300px;
+    width: 100%;
+    margin-top: 40px;
+    height: 200px;
+}
+
+
+
+div.detalle-de-producto{
+    
+    position: relative;
+    left: 5%;
+    width: 550px;
+    display: inline-block;
+    border-top: white solid 1px;
+    border-bottom: white solid 1px;
+    margin-top: 30px;
+    
+
+}
+
+
+/* detalle-producto bottom */
+
+
+main.bottom-main-detalle{
+    margin-top: 100px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+
+}
+main.bottom-main-detalle h3{
+
+    margin-left: 10px;
     color: #47525E;
-    margin-bottom: 5px;
-}
-
-.bottom-main h4 {
-    position: relative;
-    left: 44%;
-    top: 55px;
-    font-size: 20px;
-}
-
-.arrow1 {
-    position: relative;
-    bottom: -115px ;
-    left: 35%;
-    font-size: 30px;
     
 }
 
-
-.arrow2 {
-    position: relative;
-    left: 65%;
-    bottom: -50px;
-    font-size: 30px;
+div.misma-categoria{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
+
+div.misma-categoria div img{
+    width: 130px;
+    background-color: white;
+    height: 120px;
+    padding: 10px
+}
+
+.misma-categoria div{
+    text-align: center;
+}
+
+div p.disponible{
+    background-color: #078100;
+    border-radius: 10px;
+}
+
+div p.sin-stock{
+    background-color: #810002;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
