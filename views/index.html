@@ -26,8 +26,8 @@
         <div class="header-right">
             
             <i class="fas fa-shopping-cart"></i>
-            <button class="registrate-button">Registrate</button>
-            <button class="login-button"><a href="/login.html">Login</a></button>
+            <button class="registrate-button"><a href="/views/register.html">Registrate</a></button>
+            <button class="login-button"><a href="/views/login.html">Login</a></button>
 
             </div>
         </nav>
@@ -36,11 +36,17 @@
         <main class="main-index">
 
             <h3>¿Quiénes somos?</h3>
-            <button type="button">Ver más</button>
-            <p>Somos Mundo MundoRock</p>
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, quo, vero est fugiat accusamus commodi provident cumque beatae a modi laborum magnam? Excepturi ad eos quibusdam placeat facilis velit deleniti?
-            </p>
+            
+            <button onclick="myFunction()">Ver más</button>
+
+                <p id="demo" ></p>
+
+            <script>
+                function myFunction() {
+                document.getElementById("demo").innerHTML = "Somos MundoRock, tu lugar para reencontrarte con la musica que tanto te gusta. Estamos ubicados por caballito, palermo y balvanera, acercate cualquiera de nuestros locales";
+                }
+            </script>
+            
             
 
 
@@ -90,9 +96,9 @@
 
             <p>Donde la música te encuentra a vos</p>
         <div class="iconos-footer">
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-facebook-square"></i>
+            <a href="https://www.instagram.com/" target=”_blank”><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/explore" target=”_blank”><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/" target=”_blank”><i class="fab fa-facebook-square"></i></a>
         </div>
         </div>
         

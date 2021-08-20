@@ -59,15 +59,23 @@ button.registrate-button{
     color: white;
 }
 
-.login-button{
+.login-button {
+    max-width: 120px;
+
+}
+.login-button a{
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
 
     text-decoration: none;
-    color: initial;
+    color: white;
 }
 
+.registrate-button a{
+    text-decoration: none;
+    color: white;
+}
 /* inicia codigo login */
 .main-login{
     height: 550px;
@@ -196,8 +204,15 @@ div.iconos-footer {
     justify-content: space-evenly;
     font-size: 25px;
     color: white;
+    
 
 }
+div.iconos-footer a{
+    text-decoration: none;
+    color: white;
+}
+
+
 
 
 /* inicia codigo register */
@@ -400,16 +415,20 @@ div.register-box img{
 }
 
 .main-index p {
-    width: 300px;
+    width: 500px;
     text-align: center;
     margin: auto;
     margin-top: 10px;
     position: relative;
-    top: 25%;
-    display: none;
+    top: 35%;
     align-items: center;
     justify-content: center;
+    color: gray;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    font-size: 25px;
+    
 }
+
 
 .main-index-bottom{
     height: 1000px;
