@@ -10,9 +10,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-    <title>TiendadeMusica home</title>
+    <title>Login MundoRock</title>
 </head>
 <body>
+
     <header>
         <nav>
             <div class="header-left">
@@ -26,60 +27,39 @@
         <div class="header-right">
             
             <i class="fas fa-shopping-cart"></i>
-            <button class="registrate-button"><a href="/views/register.html">Registrate</a></button>
-            <button class="login-button"><a href="/views/login.html">Login</a></button>
+            <button class="registrate-button"><a href="/register">Registrate</a></button>
+            
 
             </div>
         </nav>
     </header>
+    <main class="main-login">
+        
+        <img src="/images/images-de-wireframe/banda-blanco-y-negro.jpg" alt="">
+        <img src="/images/images-de-wireframe/banda-blanco-y-negro.jpg" alt="">
+        
+        
+        <form action="/" method="POST">
 
-        <main class="main-index">
+            <label class="usuario">Usuario o correo electrónico</label>
+            <input type="email" class="inputs" placeholder="ejemplo@email">
+        
+            <label class="contraseña">Contraseña</label>
+            <input type="password" class="inputs">
+        
+            <label class="forgot-pass"><a href="#" style="color: #00A6FF;">¿Olvidaste tu contraseña?</a></label>
+            <button type="submit" class="form-bottom">Ingresar</button>
 
-            <h3>¿Quiénes somos?</h3>
+
+            <p class="texto">No tienes cuenta?</p>
+            <p class="texto">Registrate <a href="#" style="color: #00A6FF;">aquí</a></p>
             
-            <button onclick="myFunction()">Ver más</button>
-
-                <p id="demo" ></p>
-
-            <script>
-                function myFunction() {
-                document.getElementById("demo").innerHTML = "Somos MundoRock, tu lugar para reencontrarte con la musica que tanto te gusta. Estamos ubicados por caballito, palermo y balvanera, acercate cualquiera de nuestros locales";
-                }
-            </script>
             
-            
+        </form>
+        
+    </div>
 
-
-
-
-        </main>
-
-        <main class="main-index-bottom">
-            
-            <div class="guitar-index">
-
-            <img src="/images/images/guitar-home.jpg" alt="">
-            <h3 class="guitarras-index">Guitarras</h3>
-        </div>
-
-        <div class="percussion-index">
-            <img src="/images/images/percussion.jpg" alt="">
-            <h3 class="percusion-index">Percusión</h3>
-        </div>
-            
-        <div class="wind-index">
-            <img src="/images/images/wind-instrument-home.jpg" alt="">
-            <h3 class="viento-index">Instrumentos de viento</h3>
-        </div>
-            
-        <div class="mics-index">
-            <img src="/images/images/mic-home.jpg" alt="">
-            <h3 class="microfonos-index">Micrófonos</h3>
-        </div>
-
-        </main>
-
-
+    </main>
     <footer>
 
         <div class="left-footer">
@@ -110,7 +90,5 @@
         </div>
         
     </footer>
-
-
 </body>
 </html>

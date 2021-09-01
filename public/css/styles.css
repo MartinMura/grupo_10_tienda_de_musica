@@ -60,7 +60,7 @@ button.registrate-button{
 }
 
 .login-button {
-    max-width: 120px;
+    max-width: 140px;
 
 }
 .login-button a{
@@ -256,6 +256,7 @@ div.register-box img{
     margin-top: 5px;
     margin-bottom: 5px;
     width: 190px;
+    color: gray;
 
 }
 
@@ -618,6 +619,45 @@ div p.sin-stock{
 }
 
 
+
+
+/* inicia la @media index */
+
+@media (max-width: 480px ) {
+    
+    /* inicia header */
+    nav button{
+        display: none;
+    }
+
+
+    nav img{
+        margin-left: 50%;
+    }
+    /* termina header */
+    /* inicia footer */
+    footer{
+        flex-wrap: wrap;
+    }
+    footer div{
+        width: 100%;
+        text-align: center;
+    }
+
+    div.center-footer {
+        margin-right: 0px;
+    }
+
+    .center-footer img{
+        margin-left: 11px; /* solucion temporal */
+    }
+    /* termina footer */
+
+    .main-index-bottom{
+        display: block;
+    }
+    
+}
 
 
 

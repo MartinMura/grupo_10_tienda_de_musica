@@ -10,10 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-    <title>Register MundoRock</title>
+    <title>TiendadeMusica home</title>
 </head>
 <body>
-
     <header>
         <nav>
             <div class="header-left">
@@ -27,54 +26,59 @@
         <div class="header-right">
             
             <i class="fas fa-shopping-cart"></i>
-            <button class="login-button"><a href="/views/login.html">Login</a></button>
+            <button class="registrate-button"><a href="/register">Registrate</a></button>
+            <button class="login-button"><a href="/login">Login</a></button>
 
             </div>
         </nav>
     </header>
 
-    <main class="register">
-        <div class="register-box">
-            <div class="div-form-register">
-                <form action="/" method="POST">
-                
-                
-                    <label>Nombre<input type="text"></label>
-                    
-                
-                
-                    <label class="apellido-register">Apellido<input type="text"></label>
-                    
-                    <label class="domicilio-register">Domicilio<input type="text"></label>
-                
-                    
-                    <label class="usuario-register">Nombre de usuario<input type="text"></label>
+        <main class="main-index">
 
-                    <label class="email-register">Correo electrónico<input type="email"></label>
-                    
-                
-                
-                    <label class="contraseña-register">Contraseña<input type="password"></label>
-                    
-                
-                    <button type="submit">Registrarse</button>
-                    
-                    
-                
-                
-                    
-                    
-                
-                    
-
+            <h3>¿Quiénes somos?</h3>
             
-                </form>
-            </div>
-            <img src="/images/images-de-wireframe/Angus-young-sign-up.jpg" alt="">
+            <button onclick="myFunction()">Ver más</button>
+
+                <p id="demo" ></p>
+
+            <script>
+                function myFunction() {
+                document.getElementById("demo").innerHTML = "Somos MundoRock, tu lugar para reencontrarte con la musica que tanto te gusta. Estamos ubicados por caballito, palermo y balvanera, acercate cualquiera de nuestros locales";
+                }
+            </script>
+            
+            
+
+
+
+
+        </main>
+
+        <main class="main-index-bottom">
+            
+            <div class="guitar-index">
+
+            <img src="/images/images/guitar-home.jpg" alt="">
+            <h3 class="guitarras-index">Guitarras</h3>
         </div>
 
+        <div class="percussion-index">
+            <img src="/images/images/percussion.jpg" alt="">
+            <h3 class="percusion-index">Percusión</h3>
+        </div>
+            
+        <div class="wind-index">
+            <img src="/images/images/wind-instrument-home.jpg" alt="">
+            <h3 class="viento-index">Instrumentos de viento</h3>
+        </div>
+            
+        <div class="mics-index">
+            <img src="/images/images/mic-home.jpg" alt="">
+            <h3 class="microfonos-index">Micrófonos</h3>
+        </div>
 
-    </main>
+        </main>
+
 
     <footer>
 
@@ -106,6 +110,7 @@
         </div>
         
     </footer>
-    
+
+
 </body>
 </html>
