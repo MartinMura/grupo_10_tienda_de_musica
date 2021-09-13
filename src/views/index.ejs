@@ -13,25 +13,7 @@
     <title>TiendadeMusica home</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="header-left">
-            
-            <a href="/" class="logo-header"><img src="images/images/mundoRock.png" alt="logo-mundorock"></a>
-            <button class="locales-button">Locales</button>
-            <button class="productos-button">Productos</button>
-        
-        </div>
-
-        <div class="header-right">
-            
-            <i class="fas fa-shopping-cart"></i>
-            <button class="registrate-button"><a href="/register">Registrate</a></button>
-            <button class="login-button"><a href="/login">Login</a></button>
-
-            </div>
-        </nav>
-    </header>
+    <%- include('partials/header.ejs') %>
 
         <main class="main-index">
 
@@ -79,38 +61,7 @@
 
         </main>
 
-
-    <footer>
-
-        <div class="left-footer">
-            <p>Contacto</p>
-            <p>Sumate a nuestro equipo</p>
-            <p>mundorock-contacto@gmail.com</p>
-
-        </div>
-
-
-        <div class="center-footer">
-
-            <img src="images/images/mundoRock.png" alt="logo-mundorock">
-
-            <p>Donde la música te encuentra a vos</p>
-        <div class="iconos-footer">
-            <a href="https://www.instagram.com/" target=”_blank”><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/explore" target=”_blank”><i class="fab fa-twitter"></i></a>
-            <a href="https://www.facebook.com/" target=”_blank”><i class="fab fa-facebook-square"></i></a>
-        </div>
-        </div>
-        
-        <div class="right-footer">
-            <p>Sucursales</p>
-            <p>Preguntas frecuentes</p>
-            <p>Métodos de pago</p>
-
-        </div>
-        
-    </footer>
-
+        <%- include('partials/footer.ejs') %>
 
 </body>
 </html>
