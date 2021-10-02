@@ -5,48 +5,60 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/8da540b464.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="./css/normalize.css">
-        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/styles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-        <title>Detalle de producto</title>
+        <title>Crear producto</title>
     </head>
 <body>
-    <header>
-        <nav>
-            <div class="header-left">
-            
-            <a href="/" class="logo-header"><img src="images/images/mundoRock.png" alt="logo-mundorock"></a>
-            <button class="locales-button">Locales</button>
-            <button class="productos-button">Productos</button>
-        
-        </div>
-
-        <div class="header-right">
-            
-            <i class="fas fa-shopping-cart"></i>
-            <button class="registrate-button"><a href="/register">Registrate</a></button>
-            <a href="/login"><button class="login-button">Login</button></a>
-
-            </div>
-        </nav>
-    </header>
+    
+    <%- include('partials/header.ejs') %>
 
     <main>
-
-        <form action="/" method="GET">
+        <div class="div-form">
+            <form method="POST" action="/products" enctype="multipart/form-data">
+				<div class="row product-detail">
+					<div class="col-12 col-md-6">
+						<label for="name" class="form-label">Nombre del producto:</label>
+						<input type="text" id="name" name="name" placeholder="Ej: Guitarra eléctrica SG" class="form-input">
+					</div>
+					<div class="col-12 col-md-6">
+						<label for="price" class="form-label">Precio del producto:</label>
+						<input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input">
+					</div>
+					
+					<div class="col-12 col-md-6">
+						<label for="product-image" class="form-label">Imagen:</label>
+						<input type="file" id="product-image" name="image" placeholder="Imagen" class="form-input">
+					</div>
+					<div class="col-12 col-md-6">
+						<label for="category" class="form-label">Categoría:</label>
+						<select name="category" id="category" class="form-input">
+							
+							<option value="mic">Microfonos</option>
+							<option value="guitar">Guitarras</option>
+                            <option value="percussion">Percusión</option>
+                            <option value="wind">Instrumentos de viento</option>
+						</select>
+					</div>
+					<div class="col-12">
+						<label for="description" class="form-label">Descipción:</label>
+						<textarea name="description" id="description" class="form-input"></textarea>
+					</div>
+					<div class="col-12">
+						<button type="submit" class="buy-now-button">Crear producto</button>
+					</div>
+				</div>
+			</form>
+        </div>
         
         
         
         
         
-        
-        
-        
-        
-        
-        </form>
+    
 
 
 
@@ -61,56 +73,7 @@
     </main>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <footer>
-
-        <div class="left-footer">
-            <p>Contacto</p>
-            <p>Sumate a nuestro equipo</p>
-            <p>mundorock-contacto@gmail.com</p>
-
-        </div>
-
-
-        <div class="center-footer">
-
-            <img src="images/images/mundoRock.png" alt="logo-mundorock">
-
-            <p>Donde la música te encuentra a vos</p>
-        <div class="iconos-footer">
-            <a href="https://www.instagram.com/" target=”_blank”><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/explore" target=”_blank”><i class="fab fa-twitter"></i></a>
-            <a href="https://www.facebook.com/" target=”_blank”><i class="fab fa-facebook-square"></i></a>
-        </div>
-        </div>
-        
-        <div class="right-footer">
-            <p>Sucursales</p>
-            <p>Preguntas frecuentes</p>
-            <p>Métodos de pago</p>
-
-        </div>
-        
-    </footer>
-
-
+    <%- include('partials/footer.ejs') %>
 
 </body>
 </html>

@@ -4,7 +4,8 @@
   "description": "Somos \"Mundo-rock\"\r Ofrecemos una gran variedad de productos orientados a la musica\r tales como instrumentos, albumes, y accesorios para dichos\r instrumentos. Nuestra tienda esta abierta para cualquier tipo de persona,\r la música no tiene limites ni edad",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/app.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "nodemon": "^2.0.13",
     "normalize": "^0.3.1"
   }
 }

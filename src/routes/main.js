@@ -16,11 +16,7 @@ router.get("/register", mainController.register);
 
 router.get("/shopping-list", mainController.shoppingList);
 
-router.get("/detalle-producto", mainController.detalleProducto);
 
-router.get("/crear-producto", mainController.crearProducto);
-
-router.get("/edicion-producto", mainController.edicionProducto);
 
 
 

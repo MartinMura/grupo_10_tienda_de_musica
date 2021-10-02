@@ -14,20 +14,10 @@ const controlador = {
         res.render("register")
     },
 
-    detalleProducto: (req, res) => {
-        res.render("detalle-producto")
-    },
+    
 
     shoppingList: (req, res) => {
         res.render("shopping-list")
-    },
-
-    crearProducto: (req, res) => {
-        res.render("crear-producto")
-    },
-
-    edicionProducto: (rez, res) => {
-        res.render("edicion-producto")
     }
 
 
