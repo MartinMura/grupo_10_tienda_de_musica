@@ -10,8 +10,10 @@ router.get("/search", productController.search);
 router.get("/detalle-producto", productController.detalleProducto);
 
 router.get("/crear-producto", productController.crearProducto);
+router.post("/crear-producto", productController.store);
 
-router.get("/edicion-producto", productController.edicionProducto);
+router.get("/edicion-producto/:id", productController.edicionProducto);
+router.put("/edicion-producto/:id", productController.actualizar);
 
 
 module.exports = router;

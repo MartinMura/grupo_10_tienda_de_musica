@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/8da540b464.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../css/normalize.css">
-        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../../css/normalize.css">
+        <link rel="stylesheet" href="../../css/styles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
@@ -16,19 +16,43 @@
     <%- include('partials/header.ejs') %>
 
     <main>
-
-        <form action="/" method="GET">
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        </form>
+		<h1>Editing <%= productToEdit[0].name %></h1>
+        <div class="div-form">
+            <form method="POST" action="/productos/edicion-producto/<%= productToEdit[0].id %>?_method=PUT">
+				<div class="row product-detail">
+					<div class="col-12 col-md-6">
+						<label for="name" class="form-label">Nombre del producto:</label>
+						<input type="text" id="name" name="name"  class="form-input" value="<%= productToEdit[0].name %>">
+					</div>
+					<div class="col-12 col-md-6">
+						<label for="price" class="form-label">Precio del producto:</label>
+						<input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input">
+					</div>
+					
+					<div class="col-12 col-md-6">
+						<label for="product-image" class="form-label">Imagen:</label>
+						<input type="file" id="product-image" name="image" placeholder="Imagen" class="form-input">
+					</div>
+					<div class="col-12 col-md-6">
+						<label for="category" class="form-label">Categoría:</label>
+						<select name="category" id="category" class="form-input">
+							
+							<option value="mic">Microfonos</option>
+							<option value="guitar">Guitarras</option>
+                            <option value="percussion">Percusión</option>
+                            <option value="wind">Instrumentos de viento</option>
+						</select>
+					</div>
+					<div class="col-12">
+						<label for="description" class="form-label">Descipción:</label>
+						<textarea name="description" id="description" class="form-input"></textarea>
+					</div>
+					<div class="col-12">
+						<button type="submit" class="buy-now-button">Crear producto</button>
+					</div>
+				</div>
+			</form>
+        </div>
 
 
 

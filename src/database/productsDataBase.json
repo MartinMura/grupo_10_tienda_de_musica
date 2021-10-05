@@ -1,0 +1,23 @@
+[
+ {
+  "id": "1",
+  "name": "primera guitarra editada",
+  "price": "100",
+  "category": "mic",
+  "description": "probando id 1"
+ },
+ {
+  "id": "2",
+  "name": "segunda guitarra",
+  "price": "200",
+  "category": "guitar",
+  "description": "probando id 2"
+ },
+ {
+  "id": "3",
+  "name": "tercera guitarra",
+  "price": "300",
+  "category": "guitar",
+  "description": "probando id 3"
+ }
+]

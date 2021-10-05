@@ -6,9 +6,13 @@ const rutasProductos = require("./routes/producto.js")
 
 const app = express();
 const publicPath = path.resolve(__dirname, "../public");
+const methodOverride = require("method-override");
 
-
+/* use */
 app.use( express.static (publicPath));
+app.use(express.urlencoded({ extended: true}));
+app.use(express.json());
+app.use(methodOverride("_method"));
 
 /* template engine ejs */
 app.set("view engine", "ejs");

@@ -14,13 +14,17 @@
     </head>
 <body>
     <%- include('partials/header.ejs') %>
+    
+    <% for (i = 0; i < producto.length; i++) { %>
+    
+    <h1 style="background-color: blue;"><%= producto[i].name %></h1>
+    <h1><%= producto[i].price %></h1>
+    <h1><%= producto[i].description %></h1>
+    <h1><%= producto[i].category %></h1>
+    
+    <br>
 
-
-
-
-
-
-
+    <% } %>
 
 
 
