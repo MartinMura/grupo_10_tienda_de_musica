@@ -1,7 +1,7 @@
 const { ESRCH } = require("constants");
 const fs = require("fs");
 const path = require("path");
-const productsFilePath = path.join(__dirname, "../database/productsDataBase.json");
+const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
 const controlador = {   
 
     search: (req, res) => {
