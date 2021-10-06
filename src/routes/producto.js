@@ -5,7 +5,7 @@ const path = require("path")
 
 const productController = require("../controllers/productController");
 
-router.get("/search", productController.search);
+router.get("/", productController.list);
 
 router.get("/detalle-producto", productController.detalleProducto);
 

@@ -15,7 +15,15 @@
 <body>
     <%- include('partials/header.ejs') %>
 
-
+    <% for (i = 0; i < usuarios.length; i++) { %>
+        <div style="border-color: chartreuse; border-style: solid; margin-left: 35%; width: 350px; ">
+            <h1 style="margin: auto;"> id: <%= usuarios[i].id %> </h1>
+            <h1 style="margin: auto;"> <%= usuarios[i].first_name %> </h1>
+            <h2 style="margin: auto;"> <%= usuarios[i].email %> </h2>
+            <h3 style="margin: auto;"> <%= usuarios[i].category %> </h3>
+            <br>
+        </div>
+        <% } %> 
 
 
 

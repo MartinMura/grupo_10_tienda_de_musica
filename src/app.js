@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const rutasMain = require("./routes/main.js");
 const rutasProductos = require("./routes/producto.js")
+const rutasUsuarios = require("./routes/users.js")
 
 const app = express();
 const publicPath = path.resolve(__dirname, "../public");
@@ -23,6 +24,7 @@ app.set("views", path.join(__dirname, "/views"))
 
 app.use("/" , rutasMain);
 app.use("/productos", rutasProductos);
+app.use("/usuarios", rutasUsuarios)
 
 
 app.listen(3000, () => {

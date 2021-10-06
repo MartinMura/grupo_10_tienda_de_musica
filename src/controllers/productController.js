@@ -4,7 +4,7 @@ const path = require("path");
 const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
 const controlador = {   
 
-    search: (req, res) => {
+    list: (req, res) => {
         let producto = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
         res.render("products", {producto:producto})

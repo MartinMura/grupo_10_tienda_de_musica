@@ -1,0 +1,59 @@
+[
+    {"id":1,"first_name":"Olivia","last_name":"Vause","email":"ovause0@pinterest.com","password":"PXwyl9Gs","category":"user","image":"user_1.jpg"},
+    
+
+    {"id":2,"first_name":"Bennie","last_name":"Prigmore","email":"bprigmore1@un.org","password":"dDxu1ts","category":"user","image":"user_2.jpg"},
+
+
+    {"id":3,"first_name":"Haskell","last_name":"Russe","email":"hrusse2@mashable.com","password":"jpueEZr","category":"user","image":"user_3.jpg"},
+
+
+    {"id":4,"first_name":"Felisha","last_name":"Hugle","email":"fhugle3@google.cn","password":"yKeu3RbN","category":"user","image":"user_4.jpg"},
+
+
+    {"id":5,"first_name":"Lindsey","last_name":"Doey","email":"ldoey4@blinklist.com","password":"3zBjCvOn","category":"user","image":"user_5.jpg"},
+
+
+    {"id":6,"first_name":"Tonye","last_name":"Audus","email":"taudus5@cbc.ca","password":"F5ArTcCd79","category":"user","image":"user_6.jpg"},
+
+
+    {"id":7,"first_name":"Damita","last_name":"Hailey","email":"dhailey6@admin.ch","password":"9qaAvu","category":"user","image":"user_7.jpg"},
+
+
+    {"id":8,"first_name":"Jordan","last_name":"Faire","email":"jfaire7@homestead.com","password":"wtWNqtdRvGDY","category":"user","image":"user_8.jpg"},
+
+
+    {"id":9,"first_name":"Berne","last_name":"Wainman","email":"bwainman8@acquirethisname.com","password":"q8ED0g","category":"user","image":"user_9.jpg"},
+
+
+    {"id":10,"first_name":"Aura","last_name":"Evitt","email":"aevitt9@desdev.cn","password":"w4hVr2G4AqN","category":"user","image":"user_10.jpg"},
+
+
+    {"id":11,"first_name":"Cristionna","last_name":"Turpie","email":"cturpiea@squidoo.com","password":"NYaK92q","category":"user","image":"user_11.jpg"},
+
+
+    {"id":12,"first_name":"Liesa","last_name":"Brotherick","email":"lbrotherickb@bigcartel.com","password":"U2b7aO","category":"user","image":"user_12.jpg"},
+
+
+    {"id":13,"first_name":"Elvis","last_name":"Greger","email":"egregerc@hugedomains.com","password":"fKuoqBnJ5EAv","category":"user","image":"user_13.jpg"},
+
+
+    {"id":14,"first_name":"Pyotr","last_name":"Withull","email":"pwithulld@yellowbook.com","password":"ECptgoJKmO","category":"user","image":"user_14.jpg"},
+
+
+    {"id":15,"first_name":"Konstantin","last_name":"Douthwaite","email":"kdouthwaitee@ibm.com","password":"VYrcuPQK","category":"user","image":"user_15.jpg"},
+
+
+    {"id":16,"first_name":"Harriett","last_name":"Tuson","email":"htusonf@bizjournals.com","password":"ON7uLw","category":"user","image":"user_16.jpg"},
+
+
+    {"id":17,"first_name":"Armstrong","last_name":"Swaffield","email":"aswaffieldg@yellowbook.com","password":"MtaY786TLZh","category":"user","image":"user_17.jpg"},
+
+
+    {"id":18,"first_name":"Clemmie","last_name":"Scamerden","email":"cscamerdenh@ow.ly","password":"kH5gNpe","category":"user","image":"user_18.jpg"},
+
+
+    {"id":19,"first_name":"Verene","last_name":"Losselyong","email":"vlosselyongi@mapquest.com","password":"f8aUpTE04e4","category":"user","image":"user_19.jpg"},
+
+
+    {"id":20,"first_name":"Ivie","last_name":"Cawkill","email":"icawkillj@ted.com","password":"IWwVi1cWM","category":"user","image":"user_20.jpg"}]
