@@ -15,16 +15,20 @@
 <body>
     <%- include('partials/header.ejs') %>
     
+    <button style="margin-top: 10px;"><a href="/productos/crear-producto">Crear producto</a></button>
     <% for (i = 0; i < producto.length; i++) { %>
     
-    <h1 style="background-color: blue;"><%= producto[i].name %></h1>
+    <h1 style="background-color: blue; width: 300px;"><%= producto[i].name %></h1>
     <h1><%= producto[i].price %></h1>
     <h1><%= producto[i].description %></h1>
     <h1><%= producto[i].category %></h1>
     
     <br>
-
+    
+    <button><a href="/productos/edicion-producto/<%= producto[i].id %>">editar producto</a></button>
     <% } %>
+
+    
 
 
 

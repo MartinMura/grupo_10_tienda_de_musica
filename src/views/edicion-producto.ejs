@@ -25,8 +25,8 @@
 						<input type="text" id="name" name="name"  class="form-input" value="<%= productToEdit[0].name %>">
 					</div>
 					<div class="col-12 col-md-6">
-						<label for="price" class="form-label">Precio del producto:</label>
-						<input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input">
+						<label for="price" class="form-label">Precio del producto:</label> 
+						<input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input" value="<%= productToEdit[0].price %>">
 					</div>
 					
 					<div class="col-12 col-md-6">
@@ -36,19 +36,43 @@
 					<div class="col-12 col-md-6">
 						<label for="category" class="form-label">Categoría:</label>
 						<select name="category" id="category" class="form-input">
-							
-							<option value="mic">Microfonos</option>
+							<% if ( productToEdit[0].category === "mic") { %> 
+							<option value="mic" selected>Microfonos</option>
 							<option value="guitar">Guitarras</option>
                             <option value="percussion">Percusión</option>
                             <option value="wind">Instrumentos de viento</option>
+
+							<% } else if( productToEdit[0].category === "guitar"  ) { %> 
+							<option value="mic" >Microfonos</option>
+							<option value="guitar" selected>Guitarras</option>
+                            <option value="percussion">Percusión</option>
+                            <option value="wind">Instrumentos de viento</option>
+
+							<% } else if( productToEdit[0].category === "percussion"  ) { %> 
+								<option value="mic" >Microfonos</option>
+								<option value="guitar" >Guitarras</option>
+								<option value="percussion" selected>Percusión</option>
+								<option value="wind">Instrumentos de viento</option>
+
+							<% } else { %> 
+								<option value="mic" >Microfonos</option>
+								<option value="guitar" >Guitarras</option>
+								<option value="percussion" >Percusión</option>
+								<option value="wind" selected>Instrumentos de viento</option>	
+
+							<% } %> 
+
+								
+
 						</select>
 					</div>
 					<div class="col-12">
 						<label for="description" class="form-label">Descipción:</label>
-						<textarea name="description" id="description" class="form-input"></textarea>
+						<textarea name="description" id="description" class="form-input"><%= productToEdit[0].description %></textarea>
 					</div>
 					<div class="col-12">
 						<button type="submit" class="buy-now-button">Crear producto</button>
+						<button> <a href="/productos/delete-producto/<%= productToEdit[0].id %>">borrar</a></button>
 					</div>
 				</div>
 			</form>

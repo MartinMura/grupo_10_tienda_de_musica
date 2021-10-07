@@ -15,5 +15,7 @@ router.post("/crear-producto", productController.store);
 router.get("/edicion-producto/:id", productController.edicionProducto);
 router.put("/edicion-producto/:id", productController.actualizar);
 
+router.get("/delete-producto/:id" ,productController.delete);
+router.delete("/delete-producto/:id", productController.destroy)
 
 module.exports = router;

@@ -7,17 +7,17 @@
   "description": "probando id 1"
  },
  {
-  "id": "2",
-  "name": "segunda guitarra",
-  "price": "200",
+     "id":"2",
+  "name": "nuevo producto",
+  "price": "123123",
   "category": "guitar",
-  "description": "probando id 2"
+  "description": "nuevo y ultimo producto"
  },
  {
-  "id": "3",
-  "name": "tercera guitarra",
-  "price": "300",
-  "category": "guitar",
-  "description": "probando id 3"
+     "id":"3",
+  "name": "nuevo producto 2",
+  "price": "12",
+  "category": "percussion",
+  "description": "este si es el ultimo"
  }
 ]

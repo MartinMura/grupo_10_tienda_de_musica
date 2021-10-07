@@ -31,7 +31,7 @@ const controlador = {
         let productsJSON = JSON.stringify(producto, null, " ");
         fs.writeFileSync(productsFilePath, productsJSON);
 
-        res.redirect("/")
+        res.redirect("/productos")
     },
 
     edicionProducto: (req, res) => {
@@ -59,6 +59,28 @@ const controlador = {
         console.log(productsJSON)
 		res.redirect('/');
         
+    },
+    delete: (req, res ) => {
+        let idProduct = parseInt(req.params.id);
+        let producto = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+        let productToEdit = producto.filter(i => i.id == idProduct);
+        console.log(productToEdit)
+        res.render("delete-product", {productToEdit:productToEdit})
+        
+
+    },
+
+    destroy: (req, res) => {
+        let idProduct = parseInt(req.params.id);
+        let producto = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+        let indexProduct = producto.findIndex(product => product.id === idProduct);
+        console.log(indexProduct);
+
+        let productsUpdated = producto.filter(i => i.id != idProduct);
+        let productsUpdatedJSON = JSON.stringify(productsUpdated, null, " ");
+        fs.writeFileSync(productsFilePath, productsUpdatedJSON);
+
+        res.redirect("/productos");
     }
 }
 
