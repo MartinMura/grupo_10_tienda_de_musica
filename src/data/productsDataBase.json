@@ -1,23 +1,83 @@
 [
- {
-  "id": "1",
-  "name": "primera guitarra editada",
-  "price": "100",
-  "category": "mic",
-  "description": "probando id 1"
- },
- {
-     "id":"2",
-  "name": "nuevo producto",
-  "price": "123123",
-  "category": "guitar",
-  "description": "nuevo y ultimo producto"
- },
- {
-     "id":"3",
-  "name": "nuevo producto 2",
-  "price": "12",
-  "category": "percussion",
-  "description": "este si es el ultimo"
- }
+    {
+     "id": "1",
+     "name": "Microfono shure",
+     "price": "24900",
+     "category": "mic",
+     "description": "Micrófono Shure SM SM58-LC dinámico cardioide gris oscuro",
+     "imagen": ""
+    },
+    {
+       "id": "2",
+       "name": "Micrófono Sennheiser",
+       "price": "22300",
+       "category": "mic",
+       "description": "Micrófono Sennheiser E 835 dinámico cardioide negro",
+       "imagen": ""
+    },
+    {
+     "id": "3",
+     "name": "Guitarra Les Paul",
+     "price": "53300",
+     "category": "guitar",
+     "description": "Guitarra Eléctrica EpiPhone Les Paul Studio Lt Walnut",
+     "imagen": ""
+    },
+    {
+     "id": "4",
+     "name": "Guitarra Fonseca",
+     "price": "23100",
+     "category": "guitar",
+     "description": "Guitarra criolla clásica Fonseca 31",
+     "imagen": ""
+    },
+    {
+       "id": "5",
+       "name": "Bajo electrico",
+       "price": "7000",
+       "category": "guitar",
+       "description": "Bajo Eléctrico 5 Cuerdas Gio Ibanez Gsr255 Activo",
+       "imagen": ""
+    },
+    {
+       "id": "6",
+       "name": "Guitarra electroacustica Fender",
+       "price": "98900",
+       "category": "guitar",
+       "description": "Guitarra electroacústica Fender California Newporter Player jetty black",
+       "imagen": ""
+    },
+    {
+       "id": "7",
+       "name": "Bateria Pearl",
+       "price": "150800",
+       "category": "percusion",
+       "description": "Batería Pearl Decade Maple Dmp925s De 5 Cuerpos Bombo 22''",
+       "imagen": ""
+    },
+    {
+       "id": "8",
+       "name": "Bateria electronica",
+       "price": "91800",
+       "category": "percusion",
+       "description": "Batería Electrónica Midiplus Ed6 5 Cuerpos 3 Platillos Promo",
+       "imagen": ""
+    },
+    {
+       "id": "9",
+       "name": "Saxo Tenor",
+       "price": "92300",
+       "category": "Instrumento de viento",
+       "description": "Saxo Tenor Ocean Ots190",
+       "imagen": ""
+    },
+    {
+       "id": "10",
+       "name": "Trompeta Yamaha",
+       "price": "368000",
+       "category": "Instrumento de viento",
+       "description": "Trompeta Yamaha Ytr6335",
+       "imagen": ""
+    }
 ]
+   
