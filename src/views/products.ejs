@@ -22,7 +22,7 @@
     <h1><%= producto[i].price %></h1>
     <h1><%= producto[i].description %></h1>
     <h1><%= producto[i].category %></h1>
-    
+    <img src="/images/images-productos/<%= producto[i].image ? producto[i].image : "imagen_articulo_por_defecto.jpg" %>" alt=""> <!-- la ruta tiene que estar asi, si la pones absoluta no funciona -->
     <br>
     
     <button><a href="/productos/edicion-producto/<%= producto[i].id %>">editar producto</a></button>

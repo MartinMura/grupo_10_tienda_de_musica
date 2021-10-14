@@ -12,8 +12,6 @@ router.post("/", mainController.index);
 
 router.get("/login", mainController.login);
 
-router.get("/register", mainController.register);
-
 router.get("/shopping-list", mainController.shoppingList);
 
 

@@ -21,6 +21,7 @@
             <h1 style="margin: auto;"> <%= usuarios[i].first_name %> </h1>
             <h2 style="margin: auto;"> <%= usuarios[i].email %> </h2>
             <h3 style="margin: auto;"> <%= usuarios[i].category %> </h3>
+            <img class="profile-img-list" src="/images/users-images/<%= usuarios[i].image ? usuarios[i].image : "default-profile-image.jpg" %>" alt="">
             <br>
         </div>
         <% } %> 

@@ -651,6 +651,11 @@ textarea.form-input {
     padding: 20px;
 }
 
+/* list users */
+
+img.profile-img-list{
+    width: 200px;
+}
 
 
 /* inicia la @media index */

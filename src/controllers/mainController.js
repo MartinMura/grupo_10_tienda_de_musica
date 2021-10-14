@@ -10,12 +10,6 @@ const controlador = {
         res.render("login")
     },
 
-    register: (req, res) => {
-        res.render("register")
-    },
-
-    
-
     shoppingList: (req, res) => {
         res.render("shopping-list")
     }

@@ -1,38 +1,23 @@
 <%- include('partials/head.ejs') %>
+<%- include('partials/header.ejs') %>
+
 <body>
 
-    <header>
-        <nav>
-            <div class="header-left">
-            
-            <a href="/" class="logo-header"><img src="images/images/mundoRock.png" alt="logo-mundorock"></a>
-            <button class="locales-button">Locales</button>
-            <button class="productos-button">Productos</button>
-        
-        </div>
-
-        <div class="header-right">
-            
-            <i class="fas fa-shopping-cart"></i>
-            <button class="login-button"><a href="/login">Login</a></button>
-
-            </div>
-        </nav>
-    </header>
+    
 
     <main class="register">
         <div class="register-box">
             <div class="div-form-register">
-                <form action="/" method="POST">
+                <form action="/users/register" method="POST" enctype="multipart/form-data">
                 
                 
                     <label>Nombre</label>
-                    <input type="text" name="nombre">
+                    <input type="text" name="first_name">
                     
                 
                 
                     <label class="apellido-register">Apellido</label> 
-                    <input type="text" name="apellido">
+                    <input type="text" name="last_name">
                     
                     <label class="domicilio-register">Domicilio</label> 
                     <input type="text" name="domicilio">
@@ -46,11 +31,14 @@
                     
                 
                 
-                    <label class="contraseña-register">Contraseña</label> <input type="password">
+                    <label class="contraseña-register">Contraseña</label> <input type="password" name="password">
 
                     <br>
                     
-                
+                    <label for="">Imagen de perfil:</label>
+                    <input type="file" name="image">
+
+                    <br>
                     <button type="submit">Registrarse</button>
                     
                     

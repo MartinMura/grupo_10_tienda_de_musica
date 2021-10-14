@@ -1,4 +1,4 @@
-const { ESRCH } = require("constants");
+
 const fs = require("fs");
 const path = require("path");
 const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
@@ -6,7 +6,8 @@ const controlador = {
 
     list: (req, res) => {
         let producto = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-
+        producto.forEach(producto => {
+        })
         res.render("products", {producto:producto})
     },  
     
@@ -19,45 +20,66 @@ const controlador = {
     },
 
     store:(req,res) => {
-        let producto = JSON.parse(fs.readFileSync(productsFilePath, "utf-8")); /* readfileSync lee el contenido que ya habia en el archivo, y json parse lo convierte en objeto para poder trabajar con el contenido */
         
-        let nuevoProducto = {
-            name: req.body.name,
-            price: req.body.price,
-            category: req.body.category,
-            description: req.body.description
-        };
-        producto.push(nuevoProducto);
-        let productsJSON = JSON.stringify(producto, null, " ");
-        fs.writeFileSync(productsFilePath, productsJSON);
-
-        res.redirect("/productos")
+        if(req.file){
+            let producto = JSON.parse(fs.readFileSync(productsFilePath, "utf-8")); /* readfileSync lee el contenido que ya habia en el archivo, y json parse lo convierte en objeto para poder trabajar con el contenido */
+            
+            let nuevoProducto = {
+                
+                name: req.body.name,
+                price: req.body.price,
+                category: req.body.category,
+                description: req.body.description,
+                image: req.file.filename
+            };
+            
+            producto.push(nuevoProducto);
+            let productsJSON = JSON.stringify(producto, null, " ");
+            fs.writeFileSync(productsFilePath, productsJSON);
+    
+            res.redirect("/productos")
+        } else {
+            res.redirect("/productos/crear-producto")
+        }
+        
     },
 
     edicionProducto: (req, res) => {
         let idProduct = parseInt(req.params.id);
+        
         let producto = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-        let productToEdit = producto.filter(i => i.id == idProduct);
-        console.log(producto)
+        let productToEdit = producto.filter(i => i.id === idProduct);
         res.render("edicion-producto", {productToEdit:productToEdit})
 
         
     },
     actualizar: (req, res ) => {
+    
         let idProduct = parseInt(req.params.id);
+        
 		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        
 		products.forEach(product => {
-			if(product.id == idProduct) {
+            
+			if(product.id === idProduct) {
 				product.name = req.body.name;
 				product.price = req.body.price;
 				product.category = req.body.category;
 				product.description = req.body.description;
+                if (req.file) {
+                    
+					let indexProduct = products.findIndex(product => product.id === idProduct)
+					let imagePath = path.join(__dirname, '../../public/images/images-productos', products[indexProduct].image);
+					fs.unlink(imagePath, function (err) {
+						if (err) throw err;
+					});
+					product.image = req.file.filename;
+				} 
             }
         });
         let productsJSON = JSON.stringify(products, null, ' ');
 		fs.writeFileSync(productsFilePath, productsJSON);
-        console.log(productsJSON)
-		res.redirect('/');
+		res.redirect('/productos');
         
     },
     delete: (req, res ) => {
