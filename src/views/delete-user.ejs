@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head.ejs') %>
+<%- include('partials/header.ejs') %>
+<body>
+    
+    
+
+    <h1>Está seguro de que quiere eliminar <%= userToDelete[0].first_name %>?</h1>
+    <form action="/users/delete-user/<%= userToDelete[0].id %>?_method=DELETE " method="POST">
+        <br>
+        <p> <button class="boton-borrar" type="submit"> Borrar</button>
+        <a href="/users"> Volver</a></p>
+
+
+    </form>
+
+
+
+
+
+
+
+    <%- include('partials/footer.ejs') %>
+
+</body>
+</html>

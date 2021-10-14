@@ -24,8 +24,12 @@ router.get("/" , usersController.list);
 router.get("/register", usersController.register)
 router.post("/register", fileUpload.single("image"),  usersController.create)
 
+router.get("/edit-user/:id", usersController.edit)
+router.put("/edit-user/:id", fileUpload.single("image"), usersController.update)
 
+router.get("/delete-user/:id", usersController.delete);
+router.delete("/delete-user/:id", usersController.destroy);
 
-
+router.get("/detail/:id", usersController.detail)
 
 module.exports = router

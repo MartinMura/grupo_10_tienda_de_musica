@@ -1,21 +1,12 @@
 [
  {
-  "id": 1,
-  "first_name": "Olivia",
-  "last_name": "Vause",
-  "email": "ovause0@pinterest.com",
-  "password": "PXwyl9Gs",
-  "category": "user",
-  "image": "default-profile-image.jpg"
- },
- {
   "id": 2,
-  "first_name": "Bennie",
-  "last_name": "Prigmore",
+  "first_name": "Bennie ",
+  "last_name": "Prigmore    ",
   "email": "bprigmore1@un.org",
   "password": "dDxu1ts",
   "category": "user",
-  "image": "default-profile-image.jpg"
+  "image": "usuario-1634243361036.png"
  },
  {
   "id": 3,
