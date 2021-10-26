@@ -6,18 +6,28 @@
     
 
     <main class="register">
+        
         <div class="register-box">
             <div class="div-form-register">
                 <form action="/users/register" method="POST" enctype="multipart/form-data">
                 
                 
                     <label>Nombre</label>
-                    <input type="text" name="first_name">
+                    <input type="first_name" name="first_name" value="<%= locals.oldData ? oldData.first_name : null %>">
+                    <% if (locals.errors && errors.first_name) { %>
+                        <div class="text-danger">
+                            <%= errors.first_name.msg %></div>
+                    <% } %>
                     
                 
                 
                     <label class="apellido-register">Apellido</label> 
-                    <input type="text" name="last_name">
+                    <input type="last_name" name="last_name" value="<%= locals.oldData ? oldData.last_name : null %>">
+                    <% if (locals.errors && errors.last_name) { %>
+                        <div class="text-danger">
+                            <%= errors.last_name.msg %></div>
+                    <% } %>
+                    
                     
                     
                 
@@ -25,18 +35,30 @@
                     
 
                     <label class="email-register">Correo electrónico</label> 
-                    <input type="email" name="email">
+                    <input type="email" name="email" value="<%= locals.oldData ? oldData.email : null %>">
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="text-danger">
+                            <%= errors.email.msg %></div>
+                    <% } %>
                     
                 
-                
-                    <label class="contraseña-register">Contraseña</label> <input type="password" name="password">
+                    
+                    <label class="contraseña-register">Contraseña</label> <input type="password" name="password" >
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="text-danger">
+                            <%= errors.password.msg %></div>
+                    <% } %>
 
                     <br>
 
-                    
+                    <div>
                     <label for="">Imagen de perfil:</label>
                     <input type="file" name="image">
-
+                    <% if (locals.errors && errors.image) { %>
+                        <div class="text-danger">
+                            <%= errors.image.msg %></div>
+                    <% } %>
+                    </div>
                     <br>
                     <button type="submit">Registrarse</button>
                     

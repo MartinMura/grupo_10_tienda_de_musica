@@ -10,7 +10,6 @@ router.get("/", mainController.index);
 
 router.post("/", mainController.index);
 
-router.get("/login", mainController.login);
 
 router.get("/shopping-list", mainController.shoppingList);
 

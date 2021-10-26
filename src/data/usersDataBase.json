@@ -1,12 +1,12 @@
 [
  {
   "id": 2,
-  "first_name": "Bennie ",
-  "last_name": "Prigmore    ",
+  "first_name": "Bennie   (editado",
+  "last_name": "Prigmore          ",
   "email": "bprigmore1@un.org",
   "password": "dDxu1ts",
   "category": "user",
-  "image": "usuario-1634243361036.png"
+  "image": "usuario-1634925949295.png"
  },
  {
   "id": 3,
@@ -160,5 +160,26 @@
   "password": "f8aUpTE04e4",
   "category": "user",
   "image": "default-profile-image.jpg"
+ },
+ {
+  "first_name": "MARTIN ALEJANDRO",
+  "last_name": "MURA",
+  "email": "martinalejandropm@gmail.com",
+  "password": "$2a$10$Q7zcdIkKRHUcUGBQGvSqy.3qD/aRKS6Y896wQweOd.TUU5VfUM4Tm",
+  "image": "usuario-1634937261945.png"
+ },
+ {
+  "first_name": "MARTIN ALEJANDRO",
+  "last_name": "MURA",
+  "email": "martinalejandropm@gmail.com",
+  "password": "$2a$10$E7I9NRQRP86hZn9b0/dIeeFpZ1luJEeQGGMIcsDa6v/I.gNLSLvbq",
+  "image": "usuario-1634937770256.png"
+ },
+ {
+  "first_name": "MARTIN ALEJANDRO",
+  "last_name": "MURA",
+  "email": "martinalejandropm@gmail.com",
+  "password": "$2a$10$78WX4spZ9MRvWeyMWJhxYuwaCIgEk5ILZ4oo7kzbCeHJg4eX4E8OG",
+  "image": "usuario-1635274326058.jpg"
  }
 ]

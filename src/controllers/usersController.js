@@ -1,6 +1,9 @@
 const fs = require("fs");
 const path = require("path");
+const {validationResult} = require("express-validator")
 const usersFilePath = path.join(__dirname, "../data/usersDataBase.json");
+const bcrypt = require("bcryptjs");
+
 
 
 const usuarios = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
@@ -23,6 +26,12 @@ const controlador = {
 
     
     create: (req, res) => {
+        const validation = validationResult(req);
+
+        if(validation.errors.length > 0){
+            return res.render("register", {errors: validation.mapped(), oldData: req.body})
+        }
+        
         if(req.file) {
             usuarios;
             newUser = {
@@ -30,7 +39,7 @@ const controlador = {
                 first_name: req.body.first_name,
                 last_name: req.body.last_name,
                 email: req.body.email,
-                password: req.body.password,
+                password: bcrypt.hashSync(req.body.password, 10),
                 image: req.file.filename
             };
 
@@ -97,6 +106,22 @@ const controlador = {
             fs.writeFileSync(usersFilePath, usersUpdatedJSON);
     
             res.redirect("/users");
+    },
+
+    login: (req, res) => {
+        res.render("login")
+    },
+
+    processLogin: (req, res) => {
+        usuarios;
+        for (let i = 0; i < usuarios.length; i++) {
+            if (req.body.email == usuarios[i].email){
+                res.render("user-profile")
+                
+            }
+                res.redirect("/users/login")
+        
+        }
     },
 
     detail: (req, res ) => {
