@@ -3,6 +3,7 @@ const path = require("path");
 const {validationResult} = require("express-validator")
 const usersFilePath = path.join(__dirname, "../data/usersDataBase.json");
 const bcrypt = require("bcryptjs");
+const User = require('../../models/user.js');
 
 
 
@@ -29,9 +30,35 @@ const controlador = {
         const validation = validationResult(req);
 
         if(validation.errors.length > 0){
-            return res.render("register", {errors: validation.mapped(), oldData: req.body})
+            return res.render("register", {
+                errors: validation.mapped(),
+                oldData: req.body
+            });
         }
-        
+
+        let userInDB = User.findByField("email", req.body.email)
+
+        if(userInDB) {
+            return res.render("register", {
+                errors: {
+                    email: {
+                        msg: "Este email ya está en uso"
+                    }
+                },
+                oldData: req.body
+            });
+        }
+
+        let userToCreate = {
+            ...req.body,
+            image: req.file.filename,
+            password: bcrypt.hashSync(req.body.password, 10)
+        }
+
+        User.create(userToCreate)
+
+        /* 
+            METODO QUE USÉ ANTES DE TENER MODELOS
         if(req.file) {
             usuarios;
             newUser = {
@@ -45,13 +72,11 @@ const controlador = {
 
             usuarios.push(newUser);
             let usersJson = JSON.stringify(usuarios, null, " ");
-            fs.writeFileSync(usersFilePath, usersJson);
+            fs.writeFileSync(usersFilePath, usersJson); */
 
-            res.redirect("/users")
+        res.redirect("/users")
             
-        } else {
-            res.redirect("/users/register")
-        }
+        
 
     },
 
@@ -113,7 +138,41 @@ const controlador = {
     },
 
     processLogin: (req, res) => {
-        usuarios;
+        
+        let userToLogin = User.findByField("email", req.body.email);
+        console.log(userToLogin)
+        if(userToLogin){
+            let correctPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
+            if(correctPassword){
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin;
+                res.redirect("/users/detail")
+            } else {
+
+                res.render("login", {
+                    errors: {
+                        password:{
+                            msg: "Las credenciales son inválidas"
+                        }
+                        
+                    }
+                })
+            }
+            
+        }
+        res.render("login", {
+            errors: {
+                email:{
+                    msg: "Este email no está registrado"
+                }
+                
+            }
+        })
+
+
+
+            /* METODO ANTES DE MODELOS */
+        /* usuarios;
         for (let i = 0; i < usuarios.length; i++) {
             if (req.body.email == usuarios[i].email){
                 res.render("user-profile")
@@ -121,14 +180,19 @@ const controlador = {
             }
                 res.redirect("/users/login")
         
-        }
+        } */
+
+
+
     },
 
     detail: (req, res ) => {
-        let idUser = parseInt(req.params.id);
+        /* let idUser = parseInt(req.params.id);
         usuarios;
         let userDetail = usuarios.filter(user => user.id === idUser);
-        res.render("user-profile", {userDetail})
+        res.render("user-profile", {userDetail}) */
+
+        return res.render("user-profile", {user: req.session.userLogged})
     }
     
     

@@ -21,7 +21,7 @@ app.use(logger("dev"));
 app.use(session({
     secret: "Tienda de musica",
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
 }));
 app.use(cookieParser())
 

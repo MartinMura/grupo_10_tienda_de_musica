@@ -14,9 +14,19 @@
 
             <label class="usuario">Usuario o correo electrónico</label>
             <input type="email" class="inputs" placeholder="ejemplo@email" name="email">
+            <% if (locals.errors && errors.email) { %>
+                <div class="text-danger">
+                    <%= errors.email.msg %> 
+                </div>
+            <% } %>
         
             <label class="contraseña">Contraseña</label>
             <input type="password" class="inputs" name="password">
+            <% if (locals.errors && errors.password) { %>
+                <div class="text-danger">
+                    <%= errors.password.msg %> 
+                </div>
+            <% } %>
         
             <label class="forgot-pass"><a href="#" style="color: #00A6FF;">¿Olvidaste tu contraseña?</a></label>
             <button type="submit" class="form-bottom">Ingresar</button>

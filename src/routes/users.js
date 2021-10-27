@@ -66,6 +66,6 @@ router.delete("/delete-user/:id", usersController.destroy);
 router.get("/login", usersController.login);
 router.post("/login", usersController.processLogin);
 
-router.get("/detail/:id", usersController.detail);
+router.get("/detail", usersController.detail);
 
 module.exports = router
