@@ -2,7 +2,8 @@ const express = require("express");
 const path = require("path");
 const logger = require("morgan");
 const session = require("express-session");
-const cookieParser = require("cookie-parser");
+const cookie = require("cookie-parser");
+const userLoggedMiddleware = require("../middlewares/userLoggedMiddleware")
 
 const rutasMain = require("./routes/main.js");
 const rutasProductos = require("./routes/producto.js")
@@ -23,7 +24,8 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
 }));
-app.use(cookieParser())
+app.use(cookie())
+app.use(userLoggedMiddleware);
 
 /* template engine ejs */
 app.set("view engine", "ejs");

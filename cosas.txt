@@ -1,4 +1,4 @@
 -Falta validar bases de datos de usuarios, si registro el mismo usuario, tiene que devolverme al register
 -Login de usuario, validar datos e ingresar y redirigir a la pagina de perfil del usuario
 
-login completo video timestamp 55:16
+login completo video timestamp 1:12:00

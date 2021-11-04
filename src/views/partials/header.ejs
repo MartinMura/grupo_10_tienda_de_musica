@@ -2,18 +2,24 @@
     <nav>
         <div class="header-left">
         
-        <a href="/" class="logo-header"><img src="../../images/images/mundoRock.png" alt="logo-mundorock"></a>
+        <a href="/" class="logo-header"><img src="../../images/images/mundoRock.png" alt="logo-mundorock" class="nav-logo"></a>
         <button class="locales-button">Locales</button>
         <button class="productos-button">Productos</button>
     
     </div>
-
-    <div class="header-right">
+    
+    <div class="header-right" style="width: 250;">
+        <% if (locals.isLogged) { %>
+            <a href="/users/detail"> <img src="/images/users-images/<%= locals.userLogged.image %>" class="perfil-imagen" width="40" style="border-radius: 100%;" alt="">
+            Hola <%= locals.userLogged.first_name %> </a>
+            <i class="fas fa-shopping-cart"></i>
+            <a href="/users/logout"><button>Logout</button></a>
+            <% } else { %>
         
-        <i class="fas fa-shopping-cart"></i>
-        <button class="registrate-button"><a href="/users/register">Registrate</a></button>
-        <a href="/users/login"><button class="login-button">Login</button></a>
-
+            <i class="fas fa-shopping-cart"></i>
+            <button class="registrate-button"><a href="/users/register">Registrate</a></button>
+            <a href="/users/login"><button class="login-button">Login</button></a>
+            <% } %> 
         </div>
     </nav>
 </header>

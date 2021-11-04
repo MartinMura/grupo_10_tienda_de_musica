@@ -22,6 +22,7 @@ const controlador = {
 
 
     register: (req, res) => {
+        
         res.render("register")
     },
 
@@ -146,6 +147,10 @@ const controlador = {
             if(correctPassword){
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
+                if (req.body.remember_user) {
+                    res.cookie("userEmail", req.body.email, {maxAge: (1000 * 6) * 60})
+                }
+
                 res.redirect("/users/detail")
             } else {
 
@@ -193,6 +198,12 @@ const controlador = {
         res.render("user-profile", {userDetail}) */
 
         return res.render("user-profile", {user: req.session.userLogged})
+    },
+
+    logout: (req,res) => {
+        req.session.destroy();
+        res.clearCookie("userEmail");
+        return res.redirect("/")
     }
     
     
