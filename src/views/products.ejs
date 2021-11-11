@@ -18,9 +18,9 @@
     <button style="margin-top: 10px;"><a href="/productos/crear-producto">Crear producto</a></button>
     <% for (i = 0; i < producto.length; i++) { %>
     
-    <h1 style="background-color: blue; width: 300px;"><%= producto[i].name %></h1>
+    <h1 style="background-color: blue; width: 300px;"><%= producto[i].product_name %></h1>
     <h1><%= producto[i].price %></h1>
-    <h1><%= producto[i].description %></h1>
+    <h1><%= producto[i].product_description %></h1>
     <h1><%= producto[i].category %></h1>
     <img src="/images/images-productos/<%= producto[i].image ? producto[i].image : "imagen_articulo_por_defecto.jpg" %>" alt=""> <!-- la ruta tiene que estar asi, si la pones absoluta no funciona -->
     <br>

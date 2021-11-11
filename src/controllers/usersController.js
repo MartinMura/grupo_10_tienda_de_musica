@@ -141,7 +141,7 @@ const controlador = {
     processLogin: (req, res) => {
         
         let userToLogin = User.findByField("email", req.body.email);
-        console.log(userToLogin)
+        
         if(userToLogin){
             let correctPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
             if(correctPassword){

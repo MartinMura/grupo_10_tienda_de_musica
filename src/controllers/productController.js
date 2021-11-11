@@ -2,13 +2,18 @@
 const fs = require("fs");
 const path = require("path");
 const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
+const db = require("../../database/models")
 const controlador = {   
 
     list: (req, res) => {
-        let producto = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+        db.Product.findAll()
+            .then(function(productos){
+                res.render("products", {producto:productos})
+            })
+        /* let producto = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
         producto.forEach(producto => {
         })
-        res.render("products", {producto:producto})
+        res.render("products", {producto:producto}) */
     },  
     
     detalleProducto: (req, res) => {
