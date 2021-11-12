@@ -5,6 +5,7 @@ const session = require("express-session");
 const cookie = require("cookie-parser");
 const userLoggedMiddleware = require("../middlewares/userLoggedMiddleware")
 
+
 const rutasMain = require("./routes/main.js");
 const rutasProductos = require("./routes/producto.js")
 const rutasUsuarios = require("./routes/users.js")
@@ -12,6 +13,7 @@ const rutasUsuarios = require("./routes/users.js")
 const app = express();
 const publicPath = path.resolve(__dirname, "../public");
 const methodOverride = require("method-override");
+
 
 /* use */
 app.use( express.static (publicPath));
@@ -26,6 +28,7 @@ app.use(session({
 }));
 app.use(cookie())
 app.use(userLoggedMiddleware);
+
 
 /* template engine ejs */
 app.set("view engine", "ejs");

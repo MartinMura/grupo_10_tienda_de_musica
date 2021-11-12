@@ -60,6 +60,15 @@ module.exports = (sequelize, DataTypes) => {
 
     const User = sequelize.define(alias, cols, config);
 
+    User.associate = function(models){
+        User.belongsToMany(models.Product, {
+            as: "user_product",
+            foreignKey: "user_id",
+            otherKey: "product_id",
+            through: "Cart"
+        })
+    }
+
     return User;
 
 }

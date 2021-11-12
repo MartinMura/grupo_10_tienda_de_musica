@@ -1,4 +1,7 @@
--Falta validar bases de datos de usuarios, si registro el mismo usuario, tiene que devolverme al register
--Login de usuario, validar datos e ingresar y redirigir a la pagina de perfil del usuario
+11/12 14:30 Terminar de hacer los controladores para la base de datos
+Hacer las relaciones de tablas en los modelos (mirar los videos)
 
-login completo video timestamp 1:12:00
+configuracion de sequelize y relaciones de tablas en min 14:41 para atras (clase 33 CRUD)
+
+
+11/12 16:07 Si todo está bien, ya se hizo bien la relacion de tablas en sequelize, falta completar los controladores
