@@ -16,17 +16,17 @@
     <%- include('partials/header.ejs') %>
 
     <main>
-		<h1>Editing <%= productToEdit[0].name %></h1>
+		<h1>Editing <%= productToEdit.product_name %></h1>
         <div class="div-form">
-            <form method="POST" action="/productos/edicion-producto/<%= productToEdit[0].id %>?_method=PUT" enctype="multipart/form-data">
+            <form method="POST" action="/productos/edicion-producto/<%= productToEdit.id %>?_method=PUT" enctype="multipart/form-data">
 				<div class="row product-detail">
 					<div class="col-12 col-md-6">
 						<label for="name" class="form-label">Nombre del producto:</label>
-						<input type="text" id="name" name="name"  class="form-input" value="<%= productToEdit[0].name %>">
+						<input type="text" id="name" name="name"  class="form-input" value="<%= productToEdit.product_name %>">
 					</div>
 					<div class="col-12 col-md-6">
 						<label for="price" class="form-label">Precio del producto:</label> 
-						<input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input" value="<%= productToEdit[0].price %>">
+						<input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input" value="<%= productToEdit.price %>">
 					</div>
 					
 					<div class="col-12 col-md-6">
@@ -36,19 +36,19 @@
 					<div class="col-12 col-md-6">
 						<label for="category" class="form-label">Categoría:</label>
 						<select name="category" id="category" class="form-input">
-							<% if ( productToEdit[0].category === "mic") { %> 
+							<% if ( productToEdit.category === "mic") { %> 
 							<option value="mic" selected>Microfonos</option>
 							<option value="guitar">Guitarras</option>
                             <option value="percussion">Percusión</option>
                             <option value="wind">Instrumentos de viento</option>
 
-							<% } else if( productToEdit[0].category === "guitar"  ) { %> 
+							<% } else if( productToEdit.category === "guitar"  ) { %> 
 							<option value="mic" >Microfonos</option>
 							<option value="guitar" selected>Guitarras</option>
                             <option value="percussion">Percusión</option>
                             <option value="wind">Instrumentos de viento</option>
 
-							<% } else if( productToEdit[0].category === "percussion"  ) { %> 
+							<% } else if( productToEdit.category === "percussion"  ) { %> 
 								<option value="mic" >Microfonos</option>
 								<option value="guitar" >Guitarras</option>
 								<option value="percussion" selected>Percusión</option>
@@ -68,11 +68,11 @@
 					</div>
 					<div class="col-12">
 						<label for="description" class="form-label">Descipción:</label>
-						<textarea name="description" id="description" class="form-input"><%= productToEdit[0].description %></textarea>
+						<textarea name="description" id="description" class="form-input"><%= productToEdit.product_description %></textarea>
 					</div>
 					<div class="col-12">
 						<button type="submit" class="buy-now-button">Crear producto</button>
-						<button> <a href="/productos/delete-producto/<%= productToEdit[0].id %>">borrar</a></button>
+						<button> <a href="/productos/delete-producto/<%= productToEdit.id %>">borrar</a></button>
 					</div>
 				</div>
 			</form>

@@ -5,3 +5,15 @@ configuracion de sequelize y relaciones de tablas en min 14:41 para atras (clase
 
 
 11/12 16:07 Si todo está bien, ya se hizo bien la relacion de tablas en sequelize, falta completar los controladores
+
+
+11/12 16:28 video de CRUD min 26:56
+
+min 31:02 CRUD parte del create
+
+
+15/11 11:29 ya funciona el create
+
+15/11 15:13 ya funciona el metodo delete en productos
+
+15/11 15:25 FUNCIONA TODO EL CRUD-----

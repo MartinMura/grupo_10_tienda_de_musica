@@ -16,8 +16,8 @@
     
     <%- include('partials/header.ejs') %>
 
-    <h1>Está seguro de que quiere eliminar <%= productToEdit[0].name %>?</h1>
-    <form action="/productos/delete-producto/<%= productToEdit[0].id %>?_method=DELETE " method="POST">
+    <h1>Está seguro de que quiere eliminar <%= productToEdit.product_name %>?</h1>
+    <form action="/productos/delete-producto/<%= productToEdit.id %>?_method=DELETE " method="POST">
         <br>
         <p> <button class="boton-borrar" type="submit"> Borrar</button>
         <a href="/productos"> Volver</a></p>

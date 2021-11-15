@@ -27,7 +27,21 @@ const controlador = {
     store:(req,res) => {
         
         if(req.file){
-            let producto = JSON.parse(fs.readFileSync(productsFilePath, "utf-8")); /* readfileSync lee el contenido que ya habia en el archivo, y json parse lo convierte en objeto para poder trabajar con el contenido */
+
+            db.Product.create({
+                
+                product_name: req.body.name,
+                product_description: req.body.description,
+                price: req.body.price,
+                product_image: req.file.filename,
+                category: req.body.category,
+                stock: req.body.stock
+            }).then(function(){
+                res.redirect("/productos")
+            })
+
+
+            /* let producto = JSON.parse(fs.readFileSync(productsFilePath, "utf-8")); /* readfileSync lee el contenido que ya habia en el archivo, y json parse lo convierte en objeto para poder trabajar con el contenido 
             
             let nuevoProducto = {
                 
@@ -40,9 +54,9 @@ const controlador = {
             
             producto.push(nuevoProducto);
             let productsJSON = JSON.stringify(producto, null, " ");
-            fs.writeFileSync(productsFilePath, productsJSON);
+            fs.writeFileSync(productsFilePath, productsJSON); */
     
-            res.redirect("/productos")
+            
         } else {
             res.redirect("/productos/crear-producto")
         }
@@ -50,17 +64,50 @@ const controlador = {
     },
 
     edicionProducto: (req, res) => {
-        let idProduct = parseInt(req.params.id);
+        
+        db.Product.findByPk(parseInt(req.params.id))
+        .then(function(productToEdit){
+            res.render("edicion-producto", {productToEdit:productToEdit})
+        })
+
+        
+        /* let idProduct = parseInt(req.params.id);
         
         let producto = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-        let productToEdit = producto.filter(i => i.id === idProduct);
-        res.render("edicion-producto", {productToEdit:productToEdit})
+        let productToEdit = producto.filter(i => i.id === idProduct); */
+        
 
         
     },
     actualizar: (req, res ) => {
+
+
+        let id = req.params.id;
+        db.Product.findByPk(id).then((producto) => {
+        db.Product.update(
+        {
+            product_name: req.body.name || producto.product_name,
+            price: req.body.price || producto.price,
+            
+            product_description: req.body.description || producto.product_description,
+            
+            
+            category: req.body.category || producto.category,
+            product_image: req.file == undefined ? producto.product_image : req.file.filename,
+        },
+        {
+            where: {
+                id: id,
+            },
+        }
+        )
+        .then(() => {
+            return res.redirect('/productos');
+        })
+        .catch((error) => res.send(error));
+    });
     
-        let idProduct = parseInt(req.params.id);
+        /* let idProduct = parseInt(req.params.id);
         
 		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         
@@ -83,32 +130,47 @@ const controlador = {
             }
         });
         let productsJSON = JSON.stringify(products, null, ' ');
-		fs.writeFileSync(productsFilePath, productsJSON);
-		res.redirect('/productos');
+		fs.writeFileSync(productsFilePath, productsJSON); */
+		
         
     },
     delete: (req, res ) => {
-        let idProduct = parseInt(req.params.id);
+
+        db.Product.findByPk(parseInt(req.params.id))
+        .then(function(productToEdit){
+            res.render("delete-product", {productToEdit:productToEdit})
+        })
+
+        /* let idProduct = parseInt(req.params.id);
         let producto = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
         let productToEdit = producto.filter(i => i.id == idProduct);
-        console.log(productToEdit)
-        res.render("delete-product", {productToEdit:productToEdit})
+        console.log(productToEdit) */
+        
         
 
     },
 
     destroy: (req, res) => {
-        let idProduct = parseInt(req.params.id);
+
+        db.Product.destroy({
+            where: { id: parseInt(req.params.id, 10) },
+            force: true,
+          }) // force: true es para asegurar que se ejecute la acción
+            .then(() => {
+            return res.redirect("/productos");
+            })
+            .catch((error) => res.send(error));
+        }
+        /* let idProduct = parseInt(req.params.id);
         let producto = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
         let indexProduct = producto.findIndex(product => product.id === idProduct);
         console.log(indexProduct);
 
         let productsUpdated = producto.filter(i => i.id != idProduct);
         let productsUpdatedJSON = JSON.stringify(productsUpdated, null, " ");
-        fs.writeFileSync(productsFilePath, productsUpdatedJSON);
+        fs.writeFileSync(productsFilePath, productsUpdatedJSON); */
 
-        res.redirect("/productos");
-    }
+    
 }
 
 
