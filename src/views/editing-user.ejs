@@ -8,25 +8,27 @@
     <main class="register">
         <div class="register-box">
             <div class="div-form-register">
-                <form action="/users/edit-user/<%= userToEdit[0].id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form action="/users/edit-user/<%= userToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 
                 
                     <label>Nombre</label>
-                    <input type="text" name="first_name" value="<%= userToEdit[0].first_name %> ">
+                    <input type="text" name="first_name" value="<%= userToEdit.first_name %> ">
                     
                 
                 
                     <label class="apellido-register">Apellido</label> 
-                    <input type="text" name="last_name" value="<%= userToEdit[0].last_name %> ">
+                    <input type="text" name="last_name" value="<%= userToEdit.last_name %> ">
                     
                     
-                
+                    <label class="email-register">Dirección</label> 
+                    <input type="text" name="address" value="<%= userToEdit.address %> ">
                     
-                    <label class="usuario-register">Nombre de usuario</label> 
-                    <input type="text" name="usuario">
+                    
 
                     <label class="email-register">Correo electrónico</label> 
-                    <input type="email" name="email" value="<%= userToEdit[0].email %> ">
+                    <input type="email" name="email" value="<%= userToEdit.email %> ">
+
+                    
                     
                 
                 
@@ -38,7 +40,7 @@
                     <input type="file" name="image">
 
                     <br>
-                    <button type="submit">Actualizar</button>   <button><a href="/users/delete-user/<%= userToEdit[0].id %> ">Borrar</a></button>
+                    <button type="submit">Actualizar</button>   <button><a href="/users/delete-user/<%= userToEdit.id %> ">Borrar</a></button>
                     
                     
                 

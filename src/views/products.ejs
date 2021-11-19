@@ -16,17 +16,17 @@
     <%- include('partials/header.ejs') %>
     
     <button style="margin-top: 10px;"><a href="/productos/crear-producto">Crear producto</a></button>
-    <% for (i = 0; i < producto.length; i++) { %>
+    <% for (i = 0; i < searchProducts.length; i++) { %>
     
-    <h1 style="background-color: blue; width: 300px;"><%= producto[i].product_name %></h1>
-    <h1><%= producto[i].price %></h1>
-    <h1><%= producto[i].product_description %></h1>
-    <h1><%= producto[i].category%></h1>
-    <h1><%= producto[i].stock%></h1>
-    <img src="/images/images-productos/<%= producto[i].product_image ? producto[i].product_image : "imagen_articulo_por_defecto.jpg" %>" alt=""> <!-- la ruta tiene que estar asi, si la pones absoluta no funciona -->
+    <h1 style="background-color: blue; width: 300px;"><%= searchProducts[i].product_name %></h1>
+    <h1><%= searchProducts[i].price %></h1>
+    <h1><%= searchProducts[i].product_description %></h1>
+    <h1><%= searchProducts[i].category%></h1>
+    <h1><%= searchProducts[i].stock%></h1>
+    <img width="400px" height="350px" src="<%= searchProducts[i].product_image ? searchProducts[i].product_image : "imagen_articulo_por_defecto.jpg" %>" alt=""> <!-- la ruta tiene que estar asi, si la pones absoluta no funciona --> <!-- cambié la ruta por la url de cada imagen, si quiero la imagen por defecto tendré que modificar un poco ese codigo y guardar una imagen por defecto en la respectiva carpeta -->
     <br>
     
-    <button><a href="/productos/edicion-producto/<%= producto[i].id %>">editar producto</a></button>
+    <button><a href="/productos/edicion-producto/<%= searchProducts[i].id %>">editar producto</a></button>
     <% } %>
 
     

@@ -16,4 +16,13 @@ min 31:02 CRUD parte del create
 
 15/11 15:13 ya funciona el metodo delete en productos
 
-15/11 15:25 FUNCIONA TODO EL CRUD-----
+15/11 15:25 -------------FUNCIONA TODO EL CRUD de productos-------------
+
+
+15/11 18:09 CRUD usuarios: ya terminé el Create, y el read, falta update y delete, y cambiar cosas de las vistas para que funcione lo que se manda de los controladores
+
+17/11 14:53 CRUD usuarios: ya funciona el update, falta el delete
+
+17/11 15:22 CRUD usuarios: ya funciona el delete (se hizo para que se borre por completo de la base de datos, creo, no se si hay que hace algo más, pero al menos no figura una vez que se usa) y el updatedAt funciona.
+
+-------------------------CRUD de usuarios completo ----------------------

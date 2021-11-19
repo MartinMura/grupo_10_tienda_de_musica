@@ -1,27 +1,27 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = "Users";
+    let alias = "Users"
     let cols = {
         id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.INTEGER(11),
             primaryKey: true,
             autoIncrement: true
         },
         first_name: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(50),
             allowNull: false
         },
         last_name: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(50),
             allowNull: false
         },
 
         email: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(100),
             allowNull: false
         },
 
         password: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(60),
             allowNull: false
         },
         
@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(250),
         },
 
-        avatar: {
+        profile_image: {
             type: DataTypes.STRING(250),
         },
 
@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
         },
 
         updated_at: {
-            type: DataTypes.DATE,
+            type: DataTypes.DATE(),
         },
 
         deleted_at: {

@@ -31,6 +31,7 @@ const validateRegister = [
     check("email").notEmpty().withMessage("Debes ingresar un email").bail()
     .isEmail().withMessage("*Debes ingresar un formato válido de email"),
     check("password").notEmpty().withMessage("*Debes ingresar una contraseña").bail().isLength({min: 5}).withMessage("La contraseña debe tener al menos 5 carácteres"),
+    check("address").notEmpty().withMessage("*Debes colocar una dirección"),
     check("image").custom((value, { req }) => {
         let file = req.file;
         let acceptedExt = [".jpg", ".png"];

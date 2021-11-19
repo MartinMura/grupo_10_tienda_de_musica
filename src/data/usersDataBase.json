@@ -168,5 +168,14 @@
   "email": "martinalejandropm@gmail.com",
   "password": "$2a$10$qw23KtI5m/C0u8y8V829/.T65j62.r04y2LZoIqm8K0dYYqMXhkw6",
   "image": "usuario-1635362255080.png"
+ },
+ {
+  "id": 21,
+  "first_name": "MARTIN ALEJANDRO",
+  "last_name": "MURA",
+  "email": "martinalejandropm@gmail.com",
+  "password": "$2a$10$.f3BdPyhk24Xe8/JkFe7GOJWLyp/MnaFFK7AY/Uy/dMOD8YyqGiZC",
+  "address": "Catamarca 631",
+  "image": "usuario-1637010455195.png"
  }
 ]

@@ -50,6 +50,15 @@
                             <%= errors.password.msg %></div>
                     <% } %>
 
+                    
+
+                    <label class="contraseña-register">Dirección</label>
+                    <input type="text" name="address">
+                    <% if (locals.errors && errors.address) { %>
+                        <div class="text-danger">
+                            <%= errors.address.msg %></div>
+                    <% } %>
+
                     <br>
 
                     <div>

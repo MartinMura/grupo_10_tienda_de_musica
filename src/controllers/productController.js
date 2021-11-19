@@ -1,8 +1,7 @@
 
-const fs = require("fs");
-const path = require("path");
-const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
-const db = require("../../database/models")
+/* const productsFilePath = path.join(__dirname, "../data/productsDataBase.json"); */
+const db = require("../../database/models");
+const Op = db.Sequelize.Op;
 const controlador = {   
 
     list: (req, res) => {
@@ -155,12 +154,12 @@ const controlador = {
         db.Product.destroy({
             where: { id: parseInt(req.params.id, 10) },
             force: true,
-          }) // force: true es para asegurar que se ejecute la acción
+          }) // force: true es para que se borre por completo de la base de datos, no figura
             .then(() => {
             return res.redirect("/productos");
             })
             .catch((error) => res.send(error));
-        }
+        },
         /* let idProduct = parseInt(req.params.id);
         let producto = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
         let indexProduct = producto.findIndex(product => product.id === idProduct);
@@ -170,6 +169,15 @@ const controlador = {
         let productsUpdatedJSON = JSON.stringify(productsUpdated, null, " ");
         fs.writeFileSync(productsFilePath, productsUpdatedJSON); */
 
+        search: function(req, res){
+            db.Product.findAll({
+                where: {
+                    product_name: { [ Op.like ]: `%${req.query.search}%`}
+                }
+            }).then(products => {
+                return res.render("products", {searchProducts:products})
+            })
+        }
     
 }
 

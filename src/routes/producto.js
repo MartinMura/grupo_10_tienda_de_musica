@@ -31,6 +31,8 @@ router.get("/edicion-producto/:id", productController.edicionProducto);
 router.put("/edicion-producto/:id", fileUpload.single("image"), productController.actualizar);
 
 router.get("/delete-producto/:id" ,productController.delete);
-router.delete("/delete-producto/:id", productController.destroy)
+router.delete("/delete-producto/:id", productController.destroy);
+
+router.get("/search", productController.search)
 
 module.exports = router;

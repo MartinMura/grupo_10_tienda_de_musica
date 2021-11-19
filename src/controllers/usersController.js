@@ -1,29 +1,34 @@
 const fs = require("fs");
 const path = require("path");
+const db = require("../../database/models");
+const User = require("../../models/User")
 const {validationResult} = require("express-validator")
-const usersFilePath = path.join(__dirname, "../data/usersDataBase.json");
 const bcrypt = require("bcryptjs");
-const User = require('../../models/user.js');
 
 
 
-const usuarios = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
 
 const controlador = {
 
     list: (req, res) => {
-        usuarios
+        db.Users.findAll()
+        .then(function(usuarios){
+            
+            res.render("users", {usuarios:usuarios})
+        })
+
+        /* usuarios
         usuarios.forEach(usuarios => {
             console.log(typeof usuarios.id)
-        });
-        res.render("users", {usuarios:usuarios})
+        }); */
+        
     },
 
 
     register: (req, res) => {
         
-        res.render("register")
+        res.render("register", {user: req.session.userLogged})
     },
 
     
@@ -37,26 +42,37 @@ const controlador = {
             });
         }
 
-        let userInDB = User.findByField("email", req.body.email)
+        db.Users.findAll()
+        .then(users => {
+            let userInDB = users.find(i => i.email == req.body.email)
 
-        if(userInDB) {
-            return res.render("register", {
-                errors: {
-                    email: {
-                        msg: "Este email ya está en uso"
-                    }
-                },
-                oldData: req.body
-            });
-        }
+            if(userInDB) {
+                return res.render("register", {
+                    errors: {
+                        email: {
+                            msg: "Este email ya está en uso"
+                        }
+                    },
+                    oldData: req.body
+                });
+            } else {
+                db.Users.create({
+                    first_name: req.body.first_name,
+                    last_name: req.body.last_name,
+                    email: req.body.email,
+                    password: bcrypt.hashSync(req.body.password, 10),
+                    address: req.body.address,
+                    profile_image: req.file.filename
+                })
+                .then(function(userRegistered){
+                    req.session.userLogged = userRegistered
+                    return res.redirect("/users")
+                })
+            }
+            })
+        
 
-        let userToCreate = {
-            ...req.body,
-            image: req.file.filename,
-            password: bcrypt.hashSync(req.body.password, 10)
-        }
 
-        User.create(userToCreate)
 
         /* 
             METODO QUE USÉ ANTES DE TENER MODELOS
@@ -75,24 +91,47 @@ const controlador = {
             let usersJson = JSON.stringify(usuarios, null, " ");
             fs.writeFileSync(usersFilePath, usersJson); */
 
-        res.redirect("/users")
             
         
 
     },
 
     edit: (req, res) => {
-        idUser = parseInt(req.params.id);
-        usuarios;
-        let userToEdit = usuarios.filter(user => user.id === idUser);
-        res.render("editing-user", {userToEdit})
+        db.Users.findByPk(parseInt(req.params.id))
+            .then(function(userToEdit){
+                res.render("editing-user", {userToEdit})
+            })
+        /* idUser = parseInt(req.params.id);
+        usuarios; */
+        /* let userToEdit = usuarios.filter(user => user.id === idUser); */
+        
 
     },
 
     update: (req, res) => {
         let idUser = parseInt(req.params.id);
-        usuarios;
-        usuarios.forEach(user => {
+        db.Users.findByPk(idUser)
+            .then(function(userFound){
+                db.Users.update({
+                    first_name: req.body.first_name || userFound.first_name ,
+                    last_name: req.body.last_name || userFound.last_name,
+                    email: req.body.email || userFound.email,
+                    password: bcrypt.hashSync(req.body.password, 10),
+                    address: req.body.address || userFound.address,
+                    profile_image: req.file == undefined ? userFound.profile_image : req.file.filename,
+                
+                },
+                {
+                    where: {
+                        id: userFound.id
+                    }
+                })
+                .then(() => {
+                    res.redirect('/users');
+                })
+            })
+    
+        /* usuarios.forEach(user => {
             if(user.id === idUser) {
                 user.first_name = req.body.first_name,
                 user.last_name = req.body.last_name,
@@ -109,29 +148,44 @@ const controlador = {
             }
         });
         let usersJSON = JSON.stringify(usuarios, null, ' ');
-		fs.writeFileSync(usersFilePath, usersJSON);
-		res.redirect('/users');
+		fs.writeFileSync(usersFilePath, usersJSON); */
+		
 
     },
 
     delete: (req, res) => {
         let idUser = parseInt(req.params.id);
+        db.Users.findByPk(idUser)
+            .then(function(userToDelete){
+                res.render("delete-user", {userToDelete: userToDelete})
+            })
+
+        /* let idUser = parseInt(req.params.id);
         usuarios;
-        let userToDelete = usuarios.filter(i => i.id === idUser);
-        res.render("delete-user", {userToDelete: userToDelete})
+        let userToDelete = usuarios.filter(i => i.id === idUser); */
+        
     },
     
     destroy: (req, res) => {
             let idUser = parseInt(req.params.id);
-            usuarios;
+            db.Users.destroy({
+                where: {id: parseInt(req.params.id)},
+                force: true
+                
+            })
+                .then(function(){
+                    res.redirect("/users");
+
+                })
+            /* usuarios;
             let indexUsers = usuarios.findIndex(user => user.id === idUser);
             console.log(indexUsers);
     
             let usersUpdated = usuarios.filter(i => i.id != idUser);
             let usersUpdatedJSON = JSON.stringify(usersUpdated, null, " ");
-            fs.writeFileSync(usersFilePath, usersUpdatedJSON);
+            fs.writeFileSync(usersFilePath, usersUpdatedJSON); */
     
-            res.redirect("/users");
+            
     },
 
     login: (req, res) => {
