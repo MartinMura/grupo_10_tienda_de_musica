@@ -45,7 +45,6 @@ const controlador = {
         db.Users.findAll()
         .then(users => {
             let userInDB = users.find(i => i.email == req.body.email)
-
             if(userInDB) {
                 return res.render("register", {
                     errors: {
@@ -214,7 +213,8 @@ const controlador = {
                             msg: "Las credenciales son inválidas"
                         }
                         
-                    }
+                    }, 
+                    oldData: req.body
                 })
             }
             
@@ -225,7 +225,8 @@ const controlador = {
                     msg: "Este email no está registrado"
                 }
                 
-            }
+            },
+            oldData: req.body
         })
 
 

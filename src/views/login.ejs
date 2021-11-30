@@ -1,7 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+
     <%- include('partials/head.ejs') %>
     <%- include('partials/header.ejs') %>
+<body>
+    
 
     
     <main class="main-login">
@@ -13,8 +14,10 @@
         <form action="/users/login" method="POST">
 
             <label class="usuario">Usuario o correo electrónico</label>
-            <input type="email" class="inputs" placeholder="ejemplo@email" name="email">
+            <input type="email" class="inputs" placeholder="ejemplo@email" name="email" value="<%= locals.oldData ? oldData.email : null  %>">
+            
             <% if (locals.errors && errors.email) { %>
+                
                 <div class="text-danger">
                     <%= errors.email.msg %> 
                 </div>
@@ -22,13 +25,15 @@
         
             <label class="contraseña">Contraseña</label>
             <input type="password" class="inputs" name="password">
+            
             <% if (locals.errors && errors.password) { %>
+                
                 <div class="text-danger">
                     <%= errors.password.msg %> 
                 </div>
             <% } %>
         
-            <label class="forgot-pass"><a href="#" style="color: #00A6FF;">¿Olvidaste tu contraseña?</a></label>
+            <label class="forgot-pass"><a href="/" style="color: #00A6FF;">¿Olvidaste tu contraseña?</a></label>
             <button type="submit" class="form-bottom">Ingresar</button>
             <label for="" style="position: relative; left: 15%; top: 5%;">
                 <input type="checkbox" name="remember_user">  Recordar usuario
@@ -52,4 +57,3 @@
     <%- include('partials/footer.ejs') %>
 
 </body>
-</html>

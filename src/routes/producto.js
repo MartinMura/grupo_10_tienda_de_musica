@@ -1,21 +1,30 @@
 const express = require("express");
 const router = express.Router();
-const multer = require("multer");
-const path = require("path");
+const productMulterMiddleware = require('../../middlewares/productMulterMiddleware');
+const { check } = require('express-validator');
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
+const validateProduct = [
+    check("name").notEmpty().withMessage("Este campo no debe estar vacío").bail().isLength({min:5}).withMessage("Debe contener al menos 5 caracteres"),
+    check("description").isLength({min:20}).withMessage("Debe contener al menos 20 caracteres"),
+    check("image").custom((value, { req }) => {
+        let file = req.file;
+        let acceptedExt = [".jpg", ".png", ".jpeg", ".gif"];
         
-    cb(null, path.join(__dirname, "../../public/images/images-productos"));
+        if(!file) {
+            throw new Error("Tienes que subir una imágen")
+        } else {
+            let fileExtension = path.extname(file.originalname)
+            if(!acceptedExt.includes(fileExtension)){
+                throw new Error("Las extensiones de archivo permitidas son " + acceptedExt.join(", "))
+            }
+        }
+        
+        return true;
+    })
+]
 
-    },
-    filename: (req, file, cb) => {
-        let imageName = "producto-" + Date.now() + path.extname(file.originalname);
-        cb(null, imageName)
-    }
-});
 
-let fileUpload = multer({ storage })
+
 
 
 const productController = require("../controllers/productController");
@@ -25,10 +34,10 @@ router.get("/", productController.list);
 router.get("/detalle-producto", productController.detalleProducto);
 
 router.get("/crear-producto", productController.crearProducto);
-router.post("/crear-producto", fileUpload.single("image"), productController.store);
+router.post("/crear-producto", productMulterMiddleware.single("image"), validateProduct, productController.store);
 
 router.get("/edicion-producto/:id", productController.edicionProducto);
-router.put("/edicion-producto/:id", fileUpload.single("image"), productController.actualizar);
+router.put("/edicion-producto/:id", productMulterMiddleware.single("image"), productController.actualizar);
 
 router.get("/delete-producto/:id" ,productController.delete);
 router.delete("/delete-producto/:id", productController.destroy);

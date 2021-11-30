@@ -26,3 +26,7 @@ min 31:02 CRUD parte del create
 17/11 15:22 CRUD usuarios: ya funciona el delete (se hizo para que se borre por completo de la base de datos, creo, no se si hay que hace algo más, pero al menos no figura una vez que se usa) y el updatedAt funciona.
 
 -------------------------CRUD de usuarios completo ----------------------
+
+
+
+19/11 19:02 validaciones BackEnd usuarios completa, validaciones producto incompleta, falta modificar el controlador y la vista para que funcione

@@ -1,5 +1,6 @@
 
 /* const productsFilePath = path.join(__dirname, "../data/productsDataBase.json"); */
+const { validationResult } = require("express-validator");
 const db = require("../../database/models");
 const Op = db.Sequelize.Op;
 const controlador = {   
@@ -24,7 +25,13 @@ const controlador = {
     },
 
     store:(req,res) => {
-        
+        const validation = validationResult(req);
+        if(validation.errors.length > 0){
+            return res.render("crear-producto", {
+                errors: validation.mapped(),
+                oldData: req.body
+            });
+        }
         if(req.file){
 
             db.Product.create({
