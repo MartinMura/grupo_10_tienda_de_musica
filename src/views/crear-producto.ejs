@@ -7,12 +7,12 @@
 
 	<main>
 		<div class="div-form">
-			<form method="POST" action="/productos/crear-producto" enctype="multipart/form-data">
+			<form class="product-create" method="POST" action="/productos/crear-producto" enctype="multipart/form-data">
 				<div class="row product-detail">
 					<div class="col-12 col-md-6">
 						<label for="name" class="form-label">Nombre del producto:</label>
 						<input type="text" id="name" name="name" placeholder="Ej: Guitarra eléctrica SG"
-							class="form-input">
+							class="form-input product-name">
 							<% if (locals.errors && errors.name) { %>
 								<div class="text-danger">
 									<%= errors.name.msg  %> 
@@ -47,7 +47,7 @@
 					</div>
 					<div class="col-12">
 						<label for="description" class="form-label">Descipción:</label>
-						<textarea name="description" id="description" class="form-input"></textarea>
+						<textarea name="description" id="description" class="form-input product-description"></textarea>
 						<% if (locals.errors && errors.description) { %>
 							<div class="text-danger">
 								<%= errors.description.msg  %> 
@@ -63,11 +63,15 @@
 						<button type="submit" class="buy-now-button">Crear producto</button>
 					</div>
 				</div>
+
+				<div class="errores">
+					<ul></ul>
+				</div>
 			</form>
 		</div>
 	</main>
 
 
 	<%- include('partials/footer.ejs') %>
-
+<script src="/js/validation-product-create.js"></script>
 </body>

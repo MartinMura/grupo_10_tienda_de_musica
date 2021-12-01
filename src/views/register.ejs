@@ -3,92 +3,97 @@
 
 <body>
 
-    
+
 
     <main class="register">
-        
+
         <div class="register-box">
             <div class="div-form-register">
-                <form action="/users/register" method="POST" enctype="multipart/form-data">
-                
-                
+                <form class="register" action="/users/register" method="POST" enctype="multipart/form-data">
+
+
                     <label>Nombre</label>
-                    <input type="first_name" name="first_name" value="<%= locals.oldData ? oldData.first_name : null %>">
+                    <input class="name" type="first_name" name="first_name"
+                        value="<%= locals.oldData ? oldData.first_name : null %>">
                     <% if (locals.errors && errors.first_name) { %>
-                        <div class="text-danger">
-                            <%= errors.first_name.msg %>
-                        </div>
+                    <div class="text-danger">
+                        <%= errors.first_name.msg %>
+                    </div>
                     <% } %>
-                    
-                
-                
-                    <label class="apellido-register">Apellido</label> 
-                    <input type="last_name" name="last_name" value="<%= locals.oldData ? oldData.last_name : null %>">
+
+
+
+                    <label class="apellido-register">Apellido</label>
+                    <input class="last-name" type="last_name" name="last_name" value="<%= locals.oldData ? oldData.last_name : null %>">
                     <% if (locals.errors && errors.last_name) { %>
-                        <div class="text-danger">
-                            <%= errors.last_name.msg %></div>
+                    <div class="text-danger">
+                        <%= errors.last_name.msg %></div>
                     <% } %>
-                    
-                    
-                    
-                
-                    
-                    
 
-                    <label class="email-register">Correo electrónico</label> 
-                    <input type="email" name="email" value="<%= locals.oldData ? oldData.email : null %>">
+
+
+
+
+
+
+                    <label class="email-register">Correo electrónico</label>
+                    <input class="email" type="email" name="email" value="<%= locals.oldData ? oldData.email : null %>">
                     <% if (locals.errors && errors.email) { %>
-                        <div class="text-danger">
-                            <%= errors.email.msg %></div>
-                    <% } %>
-                    
-                
-                    
-                    <label class="contraseña-register">Contraseña</label> <input type="password" name="password" >
-                    <% if (locals.errors && errors.password) { %>
-                        <div class="text-danger">
-                            <%= errors.password.msg %></div>
+                    <div class="text-danger">
+                        <%= errors.email.msg %></div>
                     <% } %>
 
-                    
+
+
+                    <label class="contraseña-register">Contraseña</label> 
+                    <input class="password" type="password" name="password">
+                    <% if (locals.errors && errors.password) { %>
+                    <div class="text-danger">
+                        <%= errors.password.msg %></div>
+                    <% } %>
+
+
 
                     <label class="contraseña-register">Dirección</label>
                     <input type="text" name="address">
                     <% if (locals.errors && errors.address) { %>
-                        <div class="text-danger">
-                            <%= errors.address.msg %></div>
+                    <div class="text-danger">
+                        <%= errors.address.msg %></div>
                     <% } %>
 
                     <br>
 
                     <div>
-                    <label for="">Imagen de perfil:</label>
-                    <input type="file" name="image">
-                    <% if (locals.errors && errors.image) { %>
+                        <label for="">Imagen de perfil:</label>
+                        <input class="image" type="file" name="image">
+                        <% if (locals.errors && errors.image) { %>
                         <div class="text-danger">
                             <%= errors.image.msg %></div>
-                    <% } %>
+                        <% } %>
                     </div>
                     <br>
                     <button type="submit">Registrarse</button>
-                    
-                    
-                
-                
-                    
-                    
-                
-                    
 
-            
+
+
+
+                    <div class="errores">
+                        <ul></ul>
+                    </div>
+
+
+
+
+
                 </form>
             </div>
             <img src="/images/images-de-wireframe/Angus-young-sign-up.jpg" alt="">
         </div>
 
+        
 
     </main>
 
     <%- include('partials/footer.ejs') %>
-    
+    <script src="/js/validation-register.js"></script>
 </body>

@@ -7,11 +7,11 @@
     <main>
 		<h1>Editing <%= productToEdit.product_name %></h1>
         <div class="div-form">
-            <form method="POST" action="/productos/edicion-producto/<%= productToEdit.id %>?_method=PUT" enctype="multipart/form-data">
+            <form class="product-edit" method="POST" action="/productos/edicion-producto/<%= productToEdit.id %>?_method=PUT" enctype="multipart/form-data">
 				<div class="row product-detail">
 					<div class="col-12 col-md-6">
 						<label for="name" class="form-label">Nombre del producto:</label>
-						<input type="text" id="name" name="name"  class="form-input" value="<%= productToEdit.product_name %>">
+						<input type="text" id="name" name="name"  class="form-input product-name" value="<%= productToEdit.product_name %>">
 					</div>
 					<div class="col-12 col-md-6">
 						<label for="price" class="form-label">Precio del producto:</label> 
@@ -20,7 +20,7 @@
 					
 					<div class="col-12 col-md-6">
 						<label for="product-image" class="form-label">Imagen:</label>
-						<input type="file" id="product-image" name="image" placeholder="Imagen" class="form-input">
+						<input type="file" id="product-image" name="image" placeholder="Imagen" >
 					</div>
 					<div class="col-12 col-md-6">
 						<label for="category" class="form-label">Categoría:</label>
@@ -64,40 +64,17 @@
 						<button> <a href="/productos/delete-producto/<%= productToEdit.id %>">borrar</a></button>
 					</div>
 				</div>
+
+				<div class="errores">
+					<ul></ul>
+				</div>
 			</form>
         </div>
 
 
 
-
-
-
-
-
-
-
-
     </main>
+<%- include('partials/footer.ejs') %>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <%- include('partials/footer.ejs') %>
-
-
+	<script src="/js/validation-product-edit.js"></script>
 </body>

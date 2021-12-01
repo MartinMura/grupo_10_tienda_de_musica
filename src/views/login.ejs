@@ -11,10 +11,10 @@
         <img src="/images/images-de-wireframe/banda-blanco-y-negro.jpg" alt="">
         
         
-        <form action="/users/login" method="POST">
+        <form class="login" action="/users/login" method="POST">
 
             <label class="usuario">Usuario o correo electrónico</label>
-            <input type="email" class="inputs" placeholder="ejemplo@email" name="email" value="<%= locals.oldData ? oldData.email : null  %>">
+            <input type="email" class="inputs email" placeholder="ejemplo@email" name="email" value="<%= locals.oldData ? oldData.email : null  %>">
             
             <% if (locals.errors && errors.email) { %>
                 
@@ -24,7 +24,7 @@
             <% } %>
         
             <label class="contraseña">Contraseña</label>
-            <input type="password" class="inputs" name="password">
+            <input type="password" class="inputs password" name="password">
             
             <% if (locals.errors && errors.password) { %>
                 
@@ -47,6 +47,9 @@
             
             <p class="texto">Registrate <a href="/users/register" style="color: #00A6FF;">aquí</a></p>
             
+            <div class="errores">
+                <ul></ul>
+            </div>
             
         </form>
         
@@ -55,5 +58,6 @@
     </main>
 
     <%- include('partials/footer.ejs') %>
-
+    
+    <script src="/js/validation-login.js"></script>
 </body>

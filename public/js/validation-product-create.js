@@ -1,0 +1,34 @@
+let form = document.querySelector("form.product-create");
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+    let name = document.querySelector("input.product-name");
+    let description = document.querySelector(".product-description");
+    let image = document.querySelector("#product-image");
+
+    let errores = []
+
+    if (name.value == "") {
+        errores.push("El campo nombre del producto debe estar completo");
+    } else if (name.value.length < 5){
+        errores.push("El campo nombre del producto debe tener al menos 5 caracteres")
+    };
+
+    if (description.value < 20) {
+        errores.push("La descripción debe contener al menos 20 caracteres")
+    }
+
+    let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+    if(!allowedExtensions.exec(image.value) && image.value){
+        errores.push("Las extensiones permitidas son .jpg,.jpeg, .png, .gif")
+    }
+    
+
+    if(errores.length > 0 ){
+        e.preventDefault();
+        let ulErrores = document.querySelector("div.errores ul");
+        for(let i = 0; i < errores.length; i++){
+
+            ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
+        }
+    }
+})

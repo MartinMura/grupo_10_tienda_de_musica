@@ -661,6 +661,9 @@ img.profile-img-list{
     width: 200px;
 }
 
+div.errores{
+    color: red;
+}
 
 /* inicia la @media index */
 
