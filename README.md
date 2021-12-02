@@ -12,7 +12,7 @@ Integrantes:
 .Gonzalo Márquez.
 .Tomas Montu.
 
-
+Tablero en trello https://trello.com/b/qXPnhpMV/projecto-dh
 
 Sitios web referentes:
 -https://www.baires.rocks
