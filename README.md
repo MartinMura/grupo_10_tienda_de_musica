@@ -7,7 +7,7 @@ la música no tiene limites ni edad
 
 
 
-Integrantes: Martin Perez Mura
+Integrantes: Martin Perez Mura, Gonzalo Márquez, Tomas Montu
 
 
 
