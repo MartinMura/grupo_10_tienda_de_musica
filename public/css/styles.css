@@ -665,6 +665,42 @@ div.errores{
     color: red;
 }
 
+/* product-detail */
+
+main.top-main{
+    
+    display: flex;
+    justify-content: space-evenly;
+}
+
+main img.left-image{
+    margin: 25px 0px 0px 0px;
+    width: 300px;
+    
+    height: 300px
+    
+}
+
+main div.description-right{
+    margin: 25px 20px 0px 25px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    width: 600px;
+    max-width: 100%;
+    
+}
+
+div.product-detail-bottom{
+    margin-top: 75px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+
+.product-detail-bottom h3{
+    margin-left: 20px;
+}
+
+
 /* inicia la @media index */
 
 @media (max-width: 480px ) {

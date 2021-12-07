@@ -5,6 +5,8 @@ const db = require("../../database/models");
 const Op = db.Sequelize.Op;
 const controlador = {   
 
+    
+
     list: (req, res) => {
         db.Product.findAll()
             .then(function(productos){
@@ -184,6 +186,16 @@ const controlador = {
             }).then(products => {
                 return res.render("products", {searchProducts:products})
             })
+        },
+
+        productDetail: function(req, res){
+            
+            db.Product.findByPk(parseInt(req.params.id))
+                .then(function(productDetail){
+                    
+                    res.render("product-detail", {productDetail:productDetail})
+                })
+            
         }
     
 }

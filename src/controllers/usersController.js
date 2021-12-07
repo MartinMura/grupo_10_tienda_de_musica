@@ -192,8 +192,62 @@ const controlador = {
     },
 
     processLogin: (req, res) => {
+        let validation = validationResult(req);
+        if(validation.errors.length > 0){
+            return res.render("login", {
+                errors: validation.mapped(),
+                oldData: req.body
+            });
+        };
+
+        db.Users.findAll()
+            .then(users => {
+                let userToLogin = users.find(i => i.email == req.body.email);
+                if(userToLogin){
+                    let correctPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
+                    if(correctPassword){
+                        delete userToLogin.password;
+                        req.session.userLogged = userToLogin;
+                        if (req.body.remember_user) {
+                            res.cookie("userEmail", req.body.email, {maxAge: (1000 * 6) * 60})
+                        }
         
-        let userToLogin = User.findByField("email", req.body.email);
+                        res.redirect("/users/detail")
+                    } else {
+        
+                        res.render("login", {
+                            errors: {
+                                password:{
+                                    msg: "Las credenciales son inválidas"
+                                }
+                                
+                            }, 
+                            oldData: req.body
+                        })
+                    }
+                    
+                }
+                res.render("login", {
+                    errors: {
+                        email:{
+                            msg: "Este email no está registrado"
+                        }
+                        
+                    },
+                    oldData: req.body
+                })
+            })
+        /* METODO ANTES DE MODELOS */
+        /* usuarios;
+        for (let i = 0; i < usuarios.length; i++) {
+            if (req.body.email == usuarios[i].email){
+                res.render("user-profile")
+                
+            }
+                res.redirect("/users/login")
+        
+        } */
+        /* let userToLogin = User.findByField("email", req.body.email);
         
         if(userToLogin){
             let correctPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
@@ -227,23 +281,7 @@ const controlador = {
                 
             },
             oldData: req.body
-        })
-
-
-
-            /* METODO ANTES DE MODELOS */
-        /* usuarios;
-        for (let i = 0; i < usuarios.length; i++) {
-            if (req.body.email == usuarios[i].email){
-                res.render("user-profile")
-                
-            }
-                res.redirect("/users/login")
-        
-        } */
-
-
-
+        }) */
     },
 
     detail: (req, res ) => {

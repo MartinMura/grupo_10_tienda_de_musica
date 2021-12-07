@@ -38,6 +38,10 @@ const validateRegister = [
     })
 ]
 
+const validateLogin = [
+    check("email").notEmpty().withMessage("Debe ingresar un email").bail().isEmail().withMessage("*Debes ingresar un formato válido de email"),
+    check("password").notEmpty().withMessage("Debe ingresar una contraseña")
+]
 
 const usersController = require("../controllers/usersController");
 
@@ -55,7 +59,7 @@ router.delete("/delete-user/:id", usersController.destroy);
 
 
 router.get("/login", guestMiddleware, usersController.login);
-router.post("/login", usersController.processLogin);
+router.post("/login", validateLogin, usersController.processLogin);
 
 router.get("/detail", authMiddleware, usersController.detail);
 router.get("/logout", authMiddleware, usersController.logout);

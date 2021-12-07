@@ -3,7 +3,7 @@
 let form = document.querySelector("form.login");
 console.log(form);
 form.addEventListener("submit", function(e){
-    e.preventDefault();
+    /* e.preventDefault(); */
     let email = document.querySelector("input.email");
     let password = document.querySelector("input.password");
     let errores = [];
@@ -23,7 +23,7 @@ form.addEventListener("submit", function(e){
     
 
 
-
+/* 
     if(errores.length > 0 ){
         e.preventDefault();
         let ulErrores = document.querySelector("div.errores ul");
@@ -31,6 +31,6 @@ form.addEventListener("submit", function(e){
 
             ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
         }
-    }
+    } */
 
 })

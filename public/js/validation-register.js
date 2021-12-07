@@ -2,7 +2,7 @@ let form = document.querySelector("form.register");
 
 
 form.addEventListener("submit", function(e){
-    e.preventDefault();
+    /* e.preventDefault(); */
     let errores = [];
     let nombre = document.querySelector("input.name");
     let apellido = document.querySelector("input.last-name");
