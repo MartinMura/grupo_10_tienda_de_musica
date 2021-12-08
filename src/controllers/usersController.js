@@ -297,6 +297,18 @@ const controlador = {
         req.session.destroy();
         res.clearCookie("userEmail");
         return res.redirect("/")
+    },
+
+    profileImage:(req, res) => {
+        db.Users.findOne({
+            where: {
+                profile_image : req.params.image
+            }
+        })
+        .then(user => {
+            console.log(user);
+            res.render("profile-image", {user})
+        })
     }
     
     

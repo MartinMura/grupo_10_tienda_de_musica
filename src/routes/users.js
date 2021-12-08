@@ -64,4 +64,6 @@ router.post("/login", validateLogin, usersController.processLogin);
 router.get("/detail", authMiddleware, usersController.detail);
 router.get("/logout", authMiddleware, usersController.logout);
 
+router.get("/images/profile-image/:image", usersController.profileImage)
+
 module.exports = router
