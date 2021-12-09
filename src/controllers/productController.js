@@ -196,7 +196,9 @@ const controlador = {
                     res.render("product-detail", {productDetail:productDetail})
                 })
             
-        }
+        },
+
+        
     
 }
 

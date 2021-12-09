@@ -10,6 +10,7 @@ const rutasMain = require("./routes/main.js");
 const rutasProductos = require("./routes/producto.js")
 const rutasUsuarios = require("./routes/users.js");
 const rutasApiUsers = require("./routes/APIs/apiUsers.js");
+const rutasApiProducts = require("./routes/APIs/apiProducts.js")
 
 const app = express();
 const publicPath = path.resolve(__dirname, "../public");
@@ -42,6 +43,7 @@ app.use("/" , rutasMain);
 app.use("/productos", rutasProductos);
 app.use("/users", rutasUsuarios);
 app.use("/", rutasApiUsers);
+app.use("/", rutasApiProducts);
 
 
 app.listen(3000, () => {

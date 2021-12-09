@@ -2,18 +2,9 @@ const db = require("../../../database/models");
 
 
 module.exports = {
-   /*  detail: function(req, res){
-        db.Users.findOne({
-            where: {
-                id: req.params.id
-            }
-        })
-        .then(user => {
-            res.render("user-profile", {user})
-        })
-    }, */
+    
 
-    userApi: function(req, res) {
+    userApiList: function(req, res) {
         db.Users.findAll({
             attributes: ["id", "first_name", "last_name", "email"]
             })
@@ -22,7 +13,7 @@ module.exports = {
                     users[i].setDataValue("detail", "http://localhost:3000/api/users/" + users[i].id)
                 }
                 return res.status(200).json({
-                    total: users.length,
+                    count: users.length,
                     data: users
                 })
                 
@@ -30,16 +21,11 @@ module.exports = {
             .catch((err) => {
                 new Error(err)
             });
-
         
     },
 
     userApiID: function(req, res) {
-        db.Users.findOne({
-            where: {
-                id: parseInt(req.params.id)
-            }
-        })
+        db.Users.findByPk(parseInt(req.params.id))
         .then((user) => {
             res.status(200).json({
                 id: user.id,
@@ -49,8 +35,6 @@ module.exports = {
                 profile_image : "http://localhost:3000/users/images/profile-image/" + user.profile_image
                 
                 
-
-
             })
         })
     }

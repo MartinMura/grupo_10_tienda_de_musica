@@ -306,7 +306,6 @@ const controlador = {
             }
         })
         .then(user => {
-            console.log(user);
             res.render("profile-image", {user})
         })
     }

@@ -1,3 +1,5 @@
+use tienda_de_musica;
+
 insert into users (first_name, last_name, address, email, password) 
 values ('Pate', 'Tibbetts', '3 Sunnyside Court', 'ptibbetts0@redcross.org', 'QhWeSa'),
  ('Alwin', 'Warboys', '426 Duke Road', 'awarboys1@xing.com', 'B5lx24AGTYgO'),
@@ -22,6 +24,13 @@ values ("Guitarra Eléctrica", " Tipo Telecaster Parquer Modelo Richards", "Guit
 ("Microfono Dinamico Parquer", "Modelo Sn57b Profesional + Funda Cable", "Microfonos", 2189.99, "https://http2.mlstatic.com/D_NQ_NP_2X_972877-MLA47411526151_092021-F.webp", 7 ),
 ("Harry Styles Fine Line", "Vinilo Doble 180 G", "Vinilos", 8790, "https://http2.mlstatic.com/D_NQ_NP_2X_761311-MLA43741004580_102020-F.webp", 5),
 ("Guitarra electroacústica Cort Standard", "modelo AF510E black satin", "Guitarras", 40060.78, "https://http2.mlstatic.com/D_NQ_NP_2X_988700-MLA42167912468_062020-F.webp", 4);
+
+UPDATE products
+SET category = "Guitarras"
+WHERE id = 1;
+
+
+
 
 select * from users;
 select * from products;
