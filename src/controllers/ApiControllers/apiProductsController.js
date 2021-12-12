@@ -57,17 +57,47 @@ module.exports = {
                 
                 
                 res.status(200).json({
-                    count: products.length,
-                    countByCategory: {
-                        Wind: countWind,
-                        Guitar: countGuitar,
-                        Percusion: countPercusion,
-                        CDs: countCD,
-                        Vynil: countVinyl,
-                        Mics: countMic,
-                        
-                    },
-                    data: products
+                    
+                    data: products,
+                    categories: [{
+                        name: "Instrumentos de viento",
+                        cantidad: countWind
+                        },
+                        {
+                            name: "Guitarras",
+                            cantidad: countGuitar
+                        },
+                        {
+                            name:"Percusión",
+                            cantidad:countPercusion
+                        },
+                        {
+                            name:"CDs",
+                            cantidad: countCD
+                        },
+                        {
+                            name: "Vinilos",
+                            cantidad: countVinyl
+                        },
+                        {
+                            name: "Microfonos",
+                            cantidad: countMic
+                        },
+                    ],
+
+
+                        count: products.length,
+                        /* countByCategory: {
+                            Wind: countWind,
+                            Guitar: countGuitar,
+                            Percusion: countPercusion,
+                            CDs: countCD,
+                            Vynil: countVinyl,
+                            Mics: countMic,
+                            
+                    } */
+                
+                    
                     
                 })
                 
@@ -94,7 +124,7 @@ module.exports = {
             }); */
         
     },
-
+    
     productApiDetail: (req, res) => {
         db.Product.findByPk(parseInt(req.params.id))
             .then(product => {

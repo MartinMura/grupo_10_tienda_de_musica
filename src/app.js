@@ -3,7 +3,8 @@ const path = require("path");
 const logger = require("morgan");
 const session = require("express-session");
 const cookie = require("cookie-parser");
-const userLoggedMiddleware = require("../middlewares/userLoggedMiddleware")
+const userLoggedMiddleware = require("../middlewares/userLoggedMiddleware");
+const cors = require("cors");
 
 
 const rutasMain = require("./routes/main.js");
@@ -13,6 +14,7 @@ const rutasApiUsers = require("./routes/APIs/apiUsers.js");
 const rutasApiProducts = require("./routes/APIs/apiProducts.js")
 
 const app = express();
+
 const publicPath = path.resolve(__dirname, "../public");
 const methodOverride = require("method-override");
 
@@ -28,8 +30,10 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
 }));
+app.use(cors());
 app.use(cookie())
 app.use(userLoggedMiddleware);
+
 
 
 /* template engine ejs */
@@ -46,7 +50,7 @@ app.use("/", rutasApiUsers);
 app.use("/", rutasApiProducts);
 
 
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log("Servidor funcionando, puerto 3001");
 });
 
