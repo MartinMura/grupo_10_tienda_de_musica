@@ -5,7 +5,7 @@
 // 5. Eliminar a un usuario de la DB ==> listo
 
 // CRUD
-const fs = require("fs")
+/* const fs = require("fs")
 
 
 const User = {
@@ -60,4 +60,4 @@ const User = {
 }
 
 
-module.exports = User;
+module.exports = User; */
