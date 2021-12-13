@@ -1,5 +1,5 @@
 import React from 'react';
-import GenresInDb from './GenresInDb';
+import LastUserInDb from './LastUserInDb';
 
 function ContentRowCenter2({users = []}){
     
@@ -8,26 +8,10 @@ function ContentRowCenter2({users = []}){
             <h1>Ultimo usuario creado</h1>
             <div className="row">
                 
-                
-
-                {/*<!-- Genres in DB -->*/}
-                
-
-                    
-                
-
-                    
-                    
-                    <GenresInDb users={users}/>
-
             
-                
 
+                <LastUserInDb users={users}/>
                 
-                
-
-                
-
             </div>
         </div>
     )

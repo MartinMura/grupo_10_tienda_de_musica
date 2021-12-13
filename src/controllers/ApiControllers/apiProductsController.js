@@ -52,7 +52,10 @@ module.exports = {
             countVinyl = vinyl.count
         });
 
-        db.Product.findAll()
+        db.Product.findAll({
+            attributes: ["id", "product_name", "product_description", "price", "product_image", "created_at"
+        ]
+            })
             .then(products => {
                 for(let i = 0; i < products.length; i++){
                     products[i].setDataValue("detail", "http://localhost:3001/api/products/" + products[i].id)

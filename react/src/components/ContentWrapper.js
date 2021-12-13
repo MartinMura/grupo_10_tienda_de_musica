@@ -22,64 +22,23 @@ function ContentWrapper(){
     
         fetchMyAPI()
         }, [])
-    
-        
-    
-    /* const fetchUsers = () => {
-        const url = "http://localhost:3001/api/users";
-        fetch( url )
-        .then( response => response.json() )
-        .then( data => {
-        
-        setUsers(data.data);
-        })
-        .then(data => {
-            console.log(data);
-        });
-    }           
 
     useEffect(() => {
-        fetchUsers()
-    }, []); */
+        async function fetchMyAPI() {
+            await fetch('http://localhost:3001/api/products')
+            .then(response => response.json())
+            .then(data => {
+                setCategories(data.countByCategory);
+                setProducts(data.data);
+            })
+        }
+    
+        fetchMyAPI()
+        }, [])
 
     
-
-    const fetchProducts = () => {
-        
-        const url = "http://localhost:3001/api/products";
-        fetch( url )
-        .then( response => response.json() )
-        .then( data => {
-        setCategories(data.countByCategory);
-        setProducts(data.data);
-        
-         /* no estan hechos dinámicos */
-        });
-    }
-    useEffect(()=>{
-        fetchProducts()
-    },[]);
-
-    /* let ultimoProducto = [products.slice(-1).pop()] */
-
-    
-    
-
-    /* const fetchUltimoProducto = () => {
-        fetch("http://localhost:3001/api/products")
-        .then(response => response.json())
-        .then(data => {
-            console.log(data.data);
-            setLastProduct(data.data)
-
-        })
-    }
-    useEffect(() => {
-        fetchUltimoProducto()
-    }, []) */
-
-    
-    let lastUser = users[users.length -1]
+    let lastUser = users[users.length -1];
+    let lastProduct = products[products.length -1];
     
     
     return (
@@ -89,7 +48,7 @@ function ContentWrapper(){
                 {/*<!-- Main Content -->*/}
                 <div id="content">
                     <TopBar />
-                    <ContentRowTop categories={categories} products={products} users={lastUser} />
+                    <ContentRowTop categories={categories} products={products} users={lastUser} lastProduct={lastProduct} />
                     
                     
                     <Footer />

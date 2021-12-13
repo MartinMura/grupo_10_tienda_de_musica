@@ -1,6 +1,6 @@
 import React from 'react';
-import LastMovieInDb from './LastMovieInDb';
-import GenresInDb from './GenresInDb';
+import ProductList from './ProductList';
+import LastUserInDb from './LastUserInDb';
 
 function ContentRowCenter( {products = []}, {users = []}){
     
@@ -13,7 +13,7 @@ function ContentRowCenter( {products = []}, {users = []}){
 
                 
 
-                return <LastMovieInDb products={products} key={i}/>
+                return <ProductList products={products} key={i}/>
 
             })}
             
@@ -27,7 +27,7 @@ function ContentRowCenter( {products = []}, {users = []}){
 
                 
 
-                return <GenresInDb users={users} key={i}/>
+                return <LastUserInDb users={users} key={i}/>
 
             })}
                 

@@ -1,7 +1,6 @@
 import React from 'react';
-import imagenFondo from '../assets/images/mandalorian.jpg';
 
-function LastMovieInDb({products}){
+function ProductList({products}, {color = "#228B22"}){
     
 
     return(
@@ -16,6 +15,7 @@ function LastMovieInDb({products}){
                         <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 10 +'rem'}} src={products.product_image} alt=" Star Wars - Mandalorian "/>
                     </div>
                     <p>{products.product_description}</p>
+                    <p>Precio: <span style={{color}} > {products.price} </span></p>
                     <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View movie detail</a>
                 </div>
             </div>
@@ -23,4 +23,4 @@ function LastMovieInDb({products}){
     )
 }
 
-export default LastMovieInDb;
+export default ProductList;

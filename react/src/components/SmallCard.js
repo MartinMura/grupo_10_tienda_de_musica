@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+
 function SmallCard({color = "warning", cat = {}, icon = "fa-user"}){
     return(
         <div className="col-md-4 mb-4">
@@ -9,7 +10,7 @@ function SmallCard({color = "warning", cat = {}, icon = "fa-user"}){
                     <div className="row no-gutters align-items-center">
                         <div className="col mr-2">
                             <div className={`text-xs font-weight-bold text-${color} text-uppercase mb-1`}> {cat.name}</div>
-                            <div className="h5 mb-0 font-weight-bold text-gray-800">{cat.cantidad}</div>
+                            <div className="h5 mb-0 font-weight-bold text-gray-800">Total de productos: {cat.cantidad}</div>
                         </div>
                         <div className="col-auto">
                             <i className={`fas ${icon} fa-2x text-gray-300`}></i>

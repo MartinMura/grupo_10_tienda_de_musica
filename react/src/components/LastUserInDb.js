@@ -1,11 +1,11 @@
 import React from "react";
 
-function GenresInDb({users}) {
+function LastUserInDb({users}) {
 
   
 
   return (
-    <div className="col-lg-6 mb-4">
+    <div className="col-lg-6 mb-4" style={{width: 60 + "em"}}>
       <div className="card shadow mb-4">
         <div className="card-header py-3">
           <h5 className="m-0 font-weight-bold text-gray-800">
@@ -18,7 +18,7 @@ function GenresInDb({users}) {
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow" style={{width: 25 + "em"}}>
                 <div className="card-body" >Nombre: {users.first_name} </div>
-                <div className="card-body" >Fecha de creación: {Date(users.created_at)} </div>
+                <div className="card-body" >Fecha de creación: {users.created_at} </div>
               </div>
             </div>
             
@@ -31,4 +31,4 @@ function GenresInDb({users}) {
   );
 }
 
-export default GenresInDb;
+export default LastUserInDb;

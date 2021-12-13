@@ -1,8 +1,9 @@
 import React from 'react';
 import ContentRowCenter from './ContentRowCenter';
 import ContentRowCenter2 from "./ContentRowCenter2";
+import ContentRowCenter3 from "./ContentRowCenter3";
 import ContentRowMovies from './ContentRowMovies';
-import Chart from './Chart';
+
 
 function ContentRowTop(props){
 	console.log(props);
@@ -18,8 +19,10 @@ function ContentRowTop(props){
 					<ContentRowMovies categories={props.categories} />
 					<h1>Listado de Productos</h1>
 					<ContentRowCenter products={props.products} users={props.users}/>
+					<div className="row">
 					<ContentRowCenter2 users={props.users}/>
-					<Chart />
+					<ContentRowCenter3 lastProduct={props.lastProduct}/>
+					</div>
 	
 				</div>
 				{/*<!--End Content Row Top-->*/}

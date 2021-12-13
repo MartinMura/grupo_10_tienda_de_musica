@@ -1,7 +1,8 @@
 import React from 'react';
 import image from '../assets/images/mundoRock.png';
 
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
+import ContentRowMovies from './ContentRowMovies';
 
 function SideBar(){
 
@@ -35,9 +36,9 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
-                <Link className="nav-link" to="/GenresInDb">
+                <Link className="nav-link" to="/ContentRowMovies">
                         <i className="fas fa-fw fa-folder"></i>
-                        <span>Pages</span>
+                        <span>Categorías productos</span>
                     </Link>
                 </li>
 
@@ -59,7 +60,8 @@ function SideBar(){
                 <hr className="sidebar-divider d-none d-md-block"/>
             </ul>
             {/*<!-- End of Sidebar -->*/}
-
+        
+            
         </React.Fragment>
     )
 }
