@@ -54,12 +54,15 @@ module.exports = {
 
         db.Product.findAll()
             .then(products => {
+                for(let i = 0; i < products.length; i++){
+                    products[i].setDataValue("detail", "http://localhost:3001/api/products/" + products[i].id)
+                }
                 
                 
                 res.status(200).json({
                     
                     data: products,
-                    categories: [{
+                    countByCategory: [{
                         name: "Instrumentos de viento",
                         cantidad: countWind
                         },
@@ -85,7 +88,7 @@ module.exports = {
                         },
                     ],
 
-
+                       /*  categorias: products.category.length, */
                         count: products.length,
                         /* countByCategory: {
                             Wind: countWind,

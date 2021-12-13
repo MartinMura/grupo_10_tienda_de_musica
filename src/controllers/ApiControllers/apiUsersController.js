@@ -1,13 +1,15 @@
 const db = require("../../../database/models");
 
 
+
 module.exports = {
     
 
     userApiList: function(req, res) {
         db.Users.findAll({
-            attributes: ["id", "first_name", "last_name", "email"]
-            })
+            attributes: ["id", "first_name", "last_name", "email", "created_at"
+        ]
+            })  
             .then((users) => {
                 for(let i = 0; i < users.length; i++){
                     users[i].setDataValue("detail", "http://localhost:3000/api/users/" + users[i].id)
