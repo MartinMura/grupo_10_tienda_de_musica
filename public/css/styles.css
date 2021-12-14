@@ -218,9 +218,7 @@ div.iconos-footer a{
 
 /* inicia codigo register */
 
-main.register{
-    height: 300px;
-}
+
 
 div.register-box{
     margin: auto;
@@ -234,7 +232,7 @@ div.register-box{
     border-radius: 5px;
     max-width: 800px;
     width: 100%;
-    height: 400px;
+    
     
 }
 
@@ -243,6 +241,9 @@ div.register-box img{
     max-width: 300px;
     width: 100%;
     height: 346px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 wheat;
+
     
 }
 
@@ -401,7 +402,7 @@ div.register-box img{
     font-size: 40px;
     top: 30%;
     text-align: 50%;
-    color: gold;
+    color: white;
     
     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
@@ -430,7 +431,7 @@ div.register-box img{
     top: 35%;
     align-items: center;
     justify-content: center;
-    color: gold;
+    color: white;
     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
     font-size: 25px;
     
@@ -770,7 +771,72 @@ a.button4{
     border-color: rgba(255,255,255,1);
 }
 
+div.user-detail{
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 4px 8px 0 white;
+    width: 350px;
+    margin: auto;
+    
+    
+}
 
+.user-detail img{
+    width: 100%;
+    height: 300px
+}
+
+.buttons-admin{
+    margin: auto;
+    display: flex;
+    width: 350px;
+    justify-content: space-evenly;
+}
+
+.buttons-admin button{
+    width: 178px;
+}
+
+
+.confirmacion-delete{
+    
+    margin: auto;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    border: solid white;
+    top: 10px;
+    position: relative;
+}
+
+.confirmacion-delete img{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+
+.boton-borrar{
+    position: relative;
+    
+    top: 40px;
+    width: 200px;
+
+    
+
+}
+
+.volver{
+    width: 200px;
+    position: relative;
+    left: 296px;
+
+}
+
+.usuarios-list{
+    display: flex;
+    flex-wrap: wrap;
+    
+    justify-content: space-between;
+}
 /* inicia la @media index */
 
 @media (max-width: 480px ) {

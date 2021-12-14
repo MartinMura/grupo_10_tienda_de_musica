@@ -3,20 +3,26 @@
 
 <body>
     
+    <div class="user-detail">
 
+        <h1>Bienvenido/a <%= user.email == "martinalejandropm@gmail.com" ? "admin " + " " + user.first_name : user.first_name %> </h1>
+        <h1>Te estabamos esperando</h1>
+        
+        <h2>Detalles del perfil</h2>
+        
+        <h3>Correo electrónico: <%= user.email %> </h3>
 
-    <h1>Bienvenido/a <%= user.first_name %> </h1>
-    <h1>Te estabamos esperando</h1>
-    
-    <h2>Detalles del perfil</h2>
-    
-    <h3>Correo electrónico: <%= user.email %> </h3>
+        <h1>Imagen de perfil</h1>
+        <img src="/images/users-images/<%= user.profile_image ? user.profile_image : "default-profile-image.jpg" %> " alt="">
+        
+        
+    </div>
 
-    <h1>Imagen de perfil</h1>
-    <img src="/images/users-images/<%= user.profile_image ? user.profile_image : "default-profile-image.jpg" %> " alt="">
-    
-    
-    
+    <div class="buttons-admin">
+        <a href="/users"> <button>usuarios</button></a>
+        <a href="/productos"><button>productos</button></a>
+
+    </div>
     
     
     

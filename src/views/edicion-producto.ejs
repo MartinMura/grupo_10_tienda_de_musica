@@ -60,8 +60,8 @@
 						<textarea name="description" id="description" class="form-input"><%= productToEdit.product_description %></textarea>
 					</div>
 					<div class="col-12">
-						<button type="submit" class="buy-now-button">Crear producto</button>
-						<button> <a href="/productos/delete-producto/<%= productToEdit.id %>">borrar</a></button>
+						<button type="submit" class="buy-now-button">Actualizar producto</button>
+						
 					</div>
 				</div>
 
@@ -69,6 +69,7 @@
 					<ul></ul>
 				</div>
 			</form>
+			<a href="/productos/delete-producto/<%= productToEdit.id %>"><button> borrar</button></a>
         </div>
 
 

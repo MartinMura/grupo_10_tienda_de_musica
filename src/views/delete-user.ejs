@@ -3,16 +3,21 @@
 <body>
     
     
-
-    <h1>Está seguro de que quiere eliminar <%= userToDelete.first_name %>?</h1>
+<div class="confirmacion-delete">
+    <h1>Está seguro de que quiere eliminar al usuario <%= userToDelete.first_name %>?</h1>
+    <img src="/images/users-images/<%= userToDelete.profile_image ? userToDelete.profile_image : "default-profile-image.jpg" %> " alt="">
     <form action="/users/delete-user/<%= userToDelete.id %>?_method=DELETE " method="POST">
         <br>
-        <p> <button class="boton-borrar" type="submit"> Borrar</button>
-        <a href="/users"> Volver</a></p>
-
+        <div class="button-borrar">
+            <button class="boton-borrar" type="submit"> Borrar</button>
+            
+        </div>    
 
     </form>
-
+    <a href="/users">
+        <button class="volver"> Volver</button>
+    </a>
+</div>
 
 
 

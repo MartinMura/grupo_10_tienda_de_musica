@@ -8,7 +8,8 @@
 
         <div class="description-right">
             <h1><%= productDetail.product_name %> </h1>
-            <h2>Categorías: <a style="color: gold; text-decoration: none" href="/productos/category"><%= productDetail.category %> </a></h2>
+            <h2>Categorías: <a style="color: gold; text-decoration: none" href="/productos/category?category=<%= productDetail.category %> "><%= productDetail.category %> </a></h2>
+            <h2>Precio: <span style="color: gold;">$<%= productDetail.price %></span></h2>
             <h3>Detalle del producto:</h3>
             <p><%= productDetail.product_description %> </p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint inventore asperiores, omnis, officia fugit voluptatem nulla tempora vero accusantium sunt commodi amet molestiae nihil sit voluptatibus nemo est maiores nisi.</p>

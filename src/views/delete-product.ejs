@@ -2,16 +2,26 @@
 <%- include('partials/header.ejs') %>
 <body>
     
-   
-
-    <h1>Está seguro de que quiere eliminar <%= productToEdit.product_name %>?</h1>
-    <form action="/productos/delete-producto/<%= productToEdit.id %>?_method=DELETE " method="POST">
-        <br>
-        <p> <button class="boton-borrar" type="submit"> Borrar</button>
-        <a href="/productos"> Volver</a></p>
 
 
-    </form>
+
+    <div class="confirmacion-delete">
+        <h1>Está seguro de que quiere eliminar el producto <%= productToEdit.product_name %>?</h1>
+        <img src="<%= productToEdit.product_image ? productToEdit.product_image : "imagen_articulo_por_defecto.jpg" %>"
+                            alt="">
+        <form action="/productos/delete-producto/<%= productToEdit.id %>?_method=DELETE " method="POST">
+            <br>
+            <div class="button-borrar-volver">
+                <button class="boton-borrar" type="submit"> Borrar</button>
+                
+            </div>    
+    
+        </form>
+        <a href="/productos">
+            <button class="volver"> volver</button>
+        </a>
+    </div>
+
 
 
 

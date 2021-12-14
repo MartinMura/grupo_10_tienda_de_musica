@@ -10,7 +10,7 @@ const controlador = {
     list: (req, res) => {
         db.Product.findAll()
             .then(function(productos){
-                res.render("products-list", {producto:productos})
+                res.render("admin-products-list", {producto:productos})
             })
         /* let producto = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
         producto.forEach(producto => {
@@ -202,12 +202,19 @@ const controlador = {
             
                 db.Product.findAll({
                     where: {
-                        category: {[Op.like]: req.params.category}
+                        category: {[Op.like]: `%${req.query.category}%`}
                     }
                 }).then(products => {
                     res.render("products-category", {products})
                 })
             
+        },
+
+        listadoClient: function(req,res){
+            db.Product.findAll()
+            .then(products => {
+                res.render("products-list-client", {products})
+            })
         }
 
         

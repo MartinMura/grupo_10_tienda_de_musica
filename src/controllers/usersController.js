@@ -65,7 +65,7 @@ const controlador = {
                 })
                 .then(function(userRegistered){
                     req.session.userLogged = userRegistered
-                    return res.redirect("/users")
+                    return res.redirect("/")
                 })
             }
             })

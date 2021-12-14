@@ -8,31 +8,32 @@
     <main class="register">
         <div class="register-box">
             <div class="div-form-register">
-                <form action="/users/edit-user/<%= userToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form class="register" action="/users/edit-user/<%= userToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 
                 
                     <label>Nombre</label>
-                    <input type="text" name="first_name" value="<%= userToEdit.first_name %> ">
+                    <input class="name" type="text" name="first_name" value="<%= userToEdit.first_name %> ">
                     
                 
                 
                     <label class="apellido-register">Apellido</label> 
-                    <input type="text" name="last_name" value="<%= userToEdit.last_name %> ">
+                    <input class="last-name" type="text" name="last_name" value="<%= userToEdit.last_name %> ">
                     
                     
                     <label class="email-register">Dirección</label> 
-                    <input type="text" name="address" value="<%= userToEdit.address %> ">
+                    <input  type="text" name="address" value="<%= userToEdit.address %> ">
                     
                     
 
                     <label class="email-register">Correo electrónico</label> 
-                    <input type="email" name="email" value="<%= userToEdit.email %> ">
+                    <input class="email" type="email" name="email" value="<%= userToEdit.email %> ">
 
                     
                     
                 
                 
-                    <label class="contraseña-register">Contraseña</label> <input type="password" name="password">
+                    <label class="contraseña-register">Contraseña</label> 
+                    <input class="password" type="password" name="password">
 
                     <br>
                     
@@ -40,17 +41,10 @@
                     <input type="file" name="image">
 
                     <br>
-                    <button type="submit">Actualizar</button>   <button><a href="/users/delete-user/<%= userToEdit.id %> ">Borrar</a></button>
+                    <button type="submit">Actualizar</button>   
+                    <button><a style= "text-decoration: none; color: black;"href="/users/delete-user/<%= userToEdit.id %> ">Borrar</a></button>
                     
                     
-                
-                
-                    
-                    
-                
-                    
-
-            
                 </form>
             </div>
             <img src="/images/images-de-wireframe/Angus-young-sign-up.jpg" alt="">
@@ -60,5 +54,5 @@
     </main>
 
     <%- include('partials/footer.ejs') %>
-    
+
 </body>

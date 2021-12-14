@@ -11,7 +11,6 @@
             <div class="div-form-register">
                 <form class="register" action="/users/register" method="POST" enctype="multipart/form-data">
 
-
                     <label>Nombre</label>
                     <input class="name" type="first_name" name="first_name"
                         value="<%= locals.oldData ? oldData.first_name : null %>">
@@ -22,19 +21,13 @@
                     <% } %>
 
 
-
                     <label class="apellido-register">Apellido</label>
-                    <input class="last-name" type="last_name" name="last_name" value="<%= locals.oldData ? oldData.last_name : null %>">
+                    <input class="last-name" type="last_name" name="last_name"
+                        value="<%= locals.oldData ? oldData.last_name : null %>">
                     <% if (locals.errors && errors.last_name) { %>
                     <div class="text-danger">
                         <%= errors.last_name.msg %></div>
                     <% } %>
-
-
-
-
-
-
 
                     <label class="email-register">Correo electrónico</label>
                     <input class="email" type="email" name="email" value="<%= locals.oldData ? oldData.email : null %>">
@@ -45,7 +38,7 @@
 
 
 
-                    <label class="contraseña-register">Contraseña</label> 
+                    <label class="contraseña-register">Contraseña</label>
                     <input class="password" type="password" name="password">
                     <% if (locals.errors && errors.password) { %>
                     <div class="text-danger">
@@ -65,7 +58,7 @@
 
                     <div>
                         <label for="">Imagen de perfil:</label>
-                        <input class="image" type="file" name="image">
+                        <input  class="image" type="file" name="image">
                         <% if (locals.errors && errors.image) { %>
                         <div class="text-danger">
                             <%= errors.image.msg %></div>
@@ -73,24 +66,20 @@
                     </div>
                     <br>
                     <button type="submit">Registrarse</button>
-
-
-
-
                     <div class="errores">
                         <ul></ul>
                     </div>
-
-
-
-
-
+                    
+                    
                 </form>
+                
             </div>
+            
             <img src="/images/images-de-wireframe/Angus-young-sign-up.jpg" alt="">
+            
         </div>
 
-        
+
 
     </main>
 

@@ -43,9 +43,11 @@ router.put("/edicion-producto/:id", productMulterMiddleware.single("image"), pro
 router.get("/delete-producto/:id" ,productController.delete);
 router.delete("/delete-producto/:id", productController.destroy);
 
+/* Client-side controllers */
 router.get("/search", productController.search);
+router.get("/listado", productController.listadoClient);
 
-router.get("/category/:category", productController.searchCategory);
+router.get("/category", productController.searchCategory);
 
 
 router.get("/product-detail/:id", productController.productDetail);
