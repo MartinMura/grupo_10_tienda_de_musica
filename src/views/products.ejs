@@ -1,28 +1,49 @@
     <%- include('partials/head.ejs') %>
     <%- include('partials/header.ejs') %>
-<body>
-    
-    
-    <button style="margin-top: 10px;"><a href="/productos/crear-producto">Crear producto</a></button>
-    <% for (i = 0; i < searchProducts.length; i++) { %>
-    
-    <h1 style="background-color: blue; width: 300px;"><%= searchProducts[i].product_name %></h1>
-    <h1><%= searchProducts[i].price %></h1>
-    <h1><%= searchProducts[i].product_description %></h1>
-    <h1><%= searchProducts[i].category%></h1>
-    <h1><%= searchProducts[i].stock%></h1>
-    <img width="400px" height="350px" src="<%= searchProducts[i].product_image ? searchProducts[i].product_image : "imagen_articulo_por_defecto.jpg" %>" alt=""> <!-- la ruta tiene que estar asi, si la pones absoluta no funciona --> <!-- cambié la ruta por la url de cada imagen, si quiero la imagen por defecto tendré que modificar un poco ese codigo y guardar una imagen por defecto en la respectiva carpeta -->
-    <br>
-    
-    <button><a href="/productos/edicion-producto/<%= searchProducts[i].id %>">editar producto</a></button>
-    <% } %>
 
-    
+    <body>
+        <div>
+            <button style="margin-top: 10px;">
+                <a href="/productos/crear-producto">Crear producto</a>
+            </button>
+            <div class="listado-productos">
+
+                <% for (i = 0; i < searchProducts.length; i++) { %>
+                <a style="color: white; text-decoration: none;"
+                    href="/productos/product-detail/<%= searchProducts[i].id %> ">
+                    <div class="producto">
+                        <img src="<%= searchProducts[i].product_image ? searchProducts[i].product_image : "imagen_articulo_por_defecto.jpg" %>"
+                            alt="">
+                        <div class="container">
+                            <p><%= searchProducts[i].product_name %></p>
+                            <p style="color: gold; font-weight: bold;">Precio: $<%= searchProducts[i].price %></p>
+                            <p>Descripción del producto: <br><br><%= searchProducts[i].product_description %></p>
+                            <p>Categoría: <%= searchProducts[i].category%></p>
+                            <p>Stock: <%= searchProducts[i].stock%></p>
+
+                        
+                        <!-- la ruta tiene que estar asi, si la pones absoluta no funciona -->
+                        <!-- cambié la ruta por la url de cada imagen, si quiero la imagen por defecto tendré que modificar un poco ese codigo y guardar una imagen por defecto en la respectiva carpeta -->
+
+                        <a href="/productos/edicion-producto/<%= searchProducts[i].id %>">
+                            <button class="editar-button">editar producto</button>
+                        </a>
+                        
+                    </div>
+                    </div>
+                </a>
+                <br>
+                <% } %>
+            </div>
+        </div>
 
 
 
 
 
 
-    <%- include('partials/footer.ejs') %>
-</body>
+
+        <%- include('partials/footer.ejs') %>
+
+
+    </body>

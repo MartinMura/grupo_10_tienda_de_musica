@@ -700,6 +700,48 @@ div.product-detail-bottom{
     margin-left: 20px;
 }
 
+.listado-productos{
+    display: flex;
+    
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: start;
+    
+}
+.listado-productos img{
+    max-width:100%;
+    max-height:100%;
+    
+}
+
+div.producto{
+    width: 300px;
+    box-shadow: 0 4px 8px 0 gold;
+    transition: 0.3s;
+    width: 300px;
+    border-radius: 5px;
+
+    margin: 20px;
+    margin-right: auto;
+    
+}
+div.producto:hover {
+    box-shadow: 0 8px 16px 0 white;
+}
+
+div.producto img {
+    border-radius: 5px 5px 0 0;
+    height: 300px;
+    width: 100%;
+    margin: auto;
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+
+
 
 /* inicia la @media index */
 
