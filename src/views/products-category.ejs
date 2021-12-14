@@ -1,0 +1,48 @@
+    <%- include('partials/head.ejs') %>
+    <%- include('partials/header.ejs') %>
+
+    <body>
+        
+        <div>
+            
+        
+            <div class="listado-productos">
+                
+                <% for (i = 0; i < products.length; i++) { %>
+                <a style="color: white; text-decoration: none;"
+                    href="/productos/product-detail/<%= products[i].id %> ">
+                    <div class="producto">
+                        <img src="<%= products[i].product_image ? products[i].product_image : "imagen_articulo_por_defecto.jpg" %>"
+                            alt="">
+                        <div class="container">
+                            <p><%= products[i].product_name %></p>
+                            <p style="color: gold; font-weight: bold;">Precio: $<%= products[i].price %></p>
+                            <p>Descripción del producto: <br><br><%= products[i].product_description %></p>
+                            <p>Categoría: <%= products[i].category%></p>
+                            <p>Stock: <%= products[i].stock%></p>
+
+                        
+                        <!-- la ruta tiene que estar asi, si la pones absoluta no funciona -->
+                        <!-- cambié la ruta por la url de cada imagen, si quiero la imagen por defecto tendré que modificar un poco ese codigo y guardar una imagen por defecto en la respectiva carpeta -->
+
+                        
+                    </div>
+                    </div>
+                </a>
+                <br>
+                <% } %>
+                
+            </div>
+            
+        </div>
+
+
+
+
+
+
+
+        <%- include('partials/footer.ejs') %>
+
+
+    </body>

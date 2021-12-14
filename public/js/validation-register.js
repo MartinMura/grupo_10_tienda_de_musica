@@ -3,12 +3,13 @@ let form = document.querySelector("form.register");
 
 form.addEventListener("submit", function(e){
     /* e.preventDefault(); */
-    let errores = [];
     let nombre = document.querySelector("input.name");
     let apellido = document.querySelector("input.last-name");
     let email = document.querySelector("input.email");
     let password = document.querySelector("input.password");
     let image = document.querySelector("input.image");
+    let errores = [];
+    
 
     if (nombre.value == "") {
         errores.push("El campo nombre debe estar completo");
@@ -43,6 +44,7 @@ form.addEventListener("submit", function(e){
     if(errores.length > 0 ){
         e.preventDefault();
         let ulErrores = document.querySelector("div.errores ul");
+        ulErrores.innerHTML = ""; /* para que no se stackeen los errores */
         for(let i = 0; i < errores.length; i++){
 
             ulErrores.innerHTML += "<li>" + errores[i] + "</li>"

@@ -10,7 +10,7 @@ const controlador = {
     list: (req, res) => {
         db.Product.findAll()
             .then(function(productos){
-                res.render("products", {producto:productos})
+                res.render("products-list", {producto:productos})
             })
         /* let producto = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
         producto.forEach(producto => {
@@ -184,7 +184,7 @@ const controlador = {
                     product_name: { [ Op.like ]: `%${req.query.search}%`}
                 }
             }).then(products => {
-                return res.render("products", {searchProducts:products})
+                return res.render("search", {searchProducts:products})
             })
         },
 
@@ -197,6 +197,18 @@ const controlador = {
                 })
             
         },
+
+        searchCategory: function(req,res){
+            
+                db.Product.findAll({
+                    where: {
+                        category: {[Op.like]: req.params.category}
+                    }
+                }).then(products => {
+                    res.render("products-category", {products})
+                })
+            
+        }
 
         
     

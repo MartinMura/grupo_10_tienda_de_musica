@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const productMulterMiddleware = require('../../middlewares/productMulterMiddleware');
+const adminMiddlewareProducts = require ("../../middlewares/adminMiddlewareProducts")
 const { check } = require('express-validator');
 
 const validateProduct = [
@@ -29,20 +30,22 @@ const validateProduct = [
 
 const productController = require("../controllers/productController");
 
-router.get("/", productController.list);
+router.get("/", adminMiddlewareProducts, productController.list);
 
 router.get("/detalle-producto", productController.detalleProducto);
 
-router.get("/crear-producto", productController.crearProducto);
+router.get("/crear-producto",  productController.crearProducto);
 router.post("/crear-producto", productMulterMiddleware.single("image"), validateProduct, productController.store);
 
-router.get("/edicion-producto/:id", productController.edicionProducto);
+router.get("/edicion-producto/:id",  productController.edicionProducto);
 router.put("/edicion-producto/:id", productMulterMiddleware.single("image"), productController.actualizar);
 
 router.get("/delete-producto/:id" ,productController.delete);
 router.delete("/delete-producto/:id", productController.destroy);
 
-router.get("/search", productController.search)
+router.get("/search", productController.search);
+
+router.get("/category/:category", productController.searchCategory);
 
 
 router.get("/product-detail/:id", productController.productDetail);

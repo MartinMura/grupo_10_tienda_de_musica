@@ -1,0 +1,52 @@
+    <%- include('partials/head.ejs') %>
+    <%- include('partials/header.ejs') %>
+
+    <body>
+        
+        <div>
+            
+        
+            <a class="button4" style="background-color: red;" href="/productos/crear-producto">Crear producto</a>
+            <div class="listado-productos">
+                
+                <% for (i = 0; i < producto.length; i++) { %>
+                <a style="color: white; text-decoration: none;"
+                    href="/productos/product-detail/<%= producto[i].id %> ">
+                    <div class="producto">
+                        <img src="<%= producto[i].product_image ? producto[i].product_image : "imagen_articulo_por_defecto.jpg" %>"
+                            alt="">
+                        <div class="container">
+                            <p><%= producto[i].product_name %></p>
+                            <p style="color: gold; font-weight: bold;">Precio: $<%= producto[i].price %></p>
+                            <p>Descripción del producto: <br><br><%= producto[i].product_description %></p>
+                            <p>Categoría: <%= producto[i].category%></p>
+                            <p>Stock: <%= producto[i].stock%></p>
+
+                        
+                        <!-- la ruta tiene que estar asi, si la pones absoluta no funciona -->
+                        <!-- cambié la ruta por la url de cada imagen, si quiero la imagen por defecto tendré que modificar un poco ese codigo y guardar una imagen por defecto en la respectiva carpeta -->
+
+                        <a href="/productos/edicion-producto/<%= producto[i].id %>">
+                            <button class="editar-button">editar producto</button>
+                        </a>
+                        
+                    </div>
+                    </div>
+                </a>
+                <br>
+                <% } %>
+                
+            </div>
+            
+        </div>
+
+
+
+
+
+
+
+        <%- include('partials/footer.ejs') %>
+
+
+    </body>

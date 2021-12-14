@@ -7,13 +7,15 @@
 
             <h3>¿Quiénes somos?</h3>
             
-            <button onclick="myFunction()">Ver más</button>
+            <button class="ver-mas" onclick="myFunction()">Ver más</button>
 
                 <p id="demo" ></p>
 
             <script>
                 function myFunction() {
                 document.getElementById("demo").innerHTML = "Somos MundoRock, tu lugar para reencontrarte con la musica que tanto te gusta. Estamos ubicados por caballito, palermo y balvanera, acercate cualquiera de nuestros locales";
+
+                document.querySelector("button.ver-mas").style.display = "none"
                 }
             </script>
             
@@ -28,26 +30,26 @@
             
             <div class="guitar-index">
 
-            <a href="/productos/category"><img src="/images/images/guitar-home.jpg" alt="">
+            <a href="/productos/category/guitarras"><img src="/images/images/guitar-home.jpg" alt=""></a>
             <h3 class="guitarras-index">Guitarras</h3>
-        </div></a>
+        </div>
 
         <div class="percussion-index">
-            <a href="/productos/category">
+            <a href="/productos/category/:category">
                 <img src="/images/images/percussion.jpg" alt="">
             </a>
             <h3 class="percusion-index">Percusión</h3>
         </div>
             
         <div class="wind-index">
-            <a href="/productos/category">
+            <a href="/productos/category/:category">
                 <img src="/images/images/wind-instrument-home.jpg" alt="">
             </a>
             <h3 class="viento-index">Instrumentos de viento</h3>
         </div>
             
         <div class="mics-index">
-            <a href="/productos/category">
+            <a href="/productos/category/:category">
                 <img src="/images/images/mic-home.jpg" alt="">
             </a>
             <h3 class="microfonos-index">Micrófonos</h3>
@@ -56,5 +58,4 @@
         </main>
 
         <%- include('partials/footer.ejs') %>
-
 </body>

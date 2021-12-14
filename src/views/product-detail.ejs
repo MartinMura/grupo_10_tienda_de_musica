@@ -8,7 +8,7 @@
 
         <div class="description-right">
             <h1><%= productDetail.product_name %> </h1>
-            <h2>Categorías: <a href="/productos/category"><%= productDetail.category %> </a></h2>
+            <h2>Categorías: <a style="color: gold; text-decoration: none" href="/productos/category"><%= productDetail.category %> </a></h2>
             <h3>Detalle del producto:</h3>
             <p><%= productDetail.product_description %> </p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint inventore asperiores, omnis, officia fugit voluptatem nulla tempora vero accusantium sunt commodi amet molestiae nihil sit voluptatibus nemo est maiores nisi.</p>
@@ -20,19 +20,6 @@
 
     </main>
     
-
-    <div class="product-detail-bottom">
-        <h3>Productos con la misma categoría</h3>
-        <% for(let i = 0; i < productDetail.length; i++) { %>
-            <div>
-                <img src="<%= productDetail[i].product_image %> " alt="">
-                <h3> <%= productDetail[i].product_name %> </h3>
-                <h3 class="stock-product-detail"></h3>
-            </div>
-        <% } %> 
-
-    
-    </div>
 
 
 

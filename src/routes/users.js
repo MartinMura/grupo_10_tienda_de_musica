@@ -64,6 +64,6 @@ router.post("/login", validateLogin, usersController.processLogin);
 router.get("/detail", authMiddleware, usersController.detail);
 router.get("/logout", authMiddleware, usersController.logout);
 
-router.get("/images/profile-image/:image", usersController.profileImage)
+router.get("/images/profile-image/:image", usersController.profileImage); /* ruta que viene desde api */
 
 module.exports = router

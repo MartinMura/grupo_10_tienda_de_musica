@@ -2,12 +2,14 @@
     <%- include('partials/header.ejs') %>
 
     <body>
+        
         <div>
-            <button style="margin-top: 10px;">
-                <a href="/productos/crear-producto">Crear producto</a>
-            </button>
+            
+            <h1 style="margin-left: 20px;">Resultado de la búsqueda </h1>
+        
+            
             <div class="listado-productos">
-
+                
                 <% for (i = 0; i < searchProducts.length; i++) { %>
                 <a style="color: white; text-decoration: none;"
                     href="/productos/product-detail/<%= searchProducts[i].id %> ">
@@ -25,16 +27,16 @@
                         <!-- la ruta tiene que estar asi, si la pones absoluta no funciona -->
                         <!-- cambié la ruta por la url de cada imagen, si quiero la imagen por defecto tendré que modificar un poco ese codigo y guardar una imagen por defecto en la respectiva carpeta -->
 
-                        <a href="/productos/edicion-producto/<%= searchProducts[i].id %>">
-                            <button class="editar-button">editar producto</button>
-                        </a>
+                        
                         
                     </div>
                     </div>
                 </a>
                 <br>
                 <% } %>
+                
             </div>
+            
         </div>
 
 
