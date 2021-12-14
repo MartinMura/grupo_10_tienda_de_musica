@@ -1,6 +1,6 @@
 let form = document.querySelector("form.product-create");
 form.addEventListener("submit", function(e){
-    e.preventDefault();
+    
     let name = document.querySelector("input.product-name");
     let description = document.querySelector(".product-description");
     let image = document.querySelector("#product-image");

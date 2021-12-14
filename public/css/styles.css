@@ -359,10 +359,9 @@ div.register-box img{
 }
 
 .buttons-shopping {
-    display: flex;
-    justify-content: right;
+    width: 500px;
     position: relative;
-    left: 60%;
+    left: 50%;
 
 }
 
@@ -370,14 +369,14 @@ div.register-box img{
 
     margin: 20px 20px;
     position: relative;
-    right: 110px;
+    
     color: #2E90FD;
 }
 
 .buttons-shopping input {
 
     position: relative;
-    right: 60px;
+    left: 20px;
     height: 50px;
     background-color: #2E90FD;
     color: white;
