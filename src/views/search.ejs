@@ -14,8 +14,7 @@
                 <a style="color: white; text-decoration: none;"
                     href="/productos/product-detail/<%= searchProducts[i].id %> ">
                     <div class="producto">
-                        <img src="<%= searchProducts[i].product_image ? searchProducts[i].product_image : "imagen_articulo_por_defecto.jpg" %>"
-                            alt="">
+                        <img src="/images/images-productos/<%= searchProducts[i].product_image %> " alt="">
                         <div class="container">
                             <p><%= searchProducts[i].product_name %></p>
                             <p style="color: gold; font-weight: bold;">Precio: $<%= searchProducts[i].price %></p>

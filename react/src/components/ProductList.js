@@ -12,11 +12,11 @@ function ProductList({products}, {color = "#228B22"}){
                 </div>
                 <div className="card-body">
                     <div className="text-center">
-                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 15 +'rem'}} src={products.product_image} alt=" Star Wars - Mandalorian "/>
+                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 15 +'rem'}} src={products.pathImg} alt=" Star Wars - Mandalorian "/>
                     </div>
                     <p>{products.product_description}</p>
                     <p>Precio: <span style={{color}} > {products.price} </span></p>
-                    <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View movie detail</a>
+                    {/* <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View movie detail</a> */}
                 </div>
             </div>
         </div>

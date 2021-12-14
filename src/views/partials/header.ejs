@@ -16,7 +16,7 @@
         <div class="header-right" style="width: 250;">
             <% if (locals.isLogged) { %>
                 <a href="/users/detail"> 
-                <img src="/images/users-images/<%= locals.userLogged.profile_image %>"class="perfil-imagen" width="40" style="border-radius: 100%;" alt="">
+                <img src="/images/users-images/<%= locals.userLogged.profile_image %>"class="perfil-imagen" width="30" height="30" style="border-radius: 100%;" alt="">
                 </a>
                 <a style="text-decoration: none; color:white; margin-left: 5px;"href="/users/detail"><%= locals.userLogged.first_name %>
                 </a>

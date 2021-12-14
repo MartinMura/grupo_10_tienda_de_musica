@@ -1,7 +1,9 @@
 import React from 'react';
 import image from '../assets/images/mundoRock.png';
+import ContentWrapper from "./ContentWrapper";
 
-import { Link, Route } from 'react-router-dom';
+
+import { Link, Route, Switch } from 'react-router-dom';
 import ContentRowMovies from './ContentRowMovies';
 
 function SideBar(){
@@ -14,7 +16,7 @@ function SideBar(){
                 {/*<!-- Sidebar - Brand -->*/}
                 <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                     <div className="sidebar-brand-icon">
-                        <img className="w-100" src={image} alt="Digital House"/>
+                        <img className="w-300" src={image} alt="Digital House"/>
                     </div>
                 </a>
 
@@ -60,7 +62,7 @@ function SideBar(){
                 <hr className="sidebar-divider d-none d-md-block"/>
             </ul>
             {/*<!-- End of Sidebar -->*/}
-        
+            
             
         </React.Fragment>
     )

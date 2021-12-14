@@ -5,15 +5,16 @@
 
     <div class="usuarios-list">
         <% for (i = 0; i < usuarios.length; i++) { %>
-            <div style="border-color: chartreuse; border-style: solid; width: 350px; margin: auto; margin-top: 20px;">
+            <div style="border-color: chartreuse; height: 400px;border-style: solid; width: 350px; margin: auto; margin-top: 20px;">
                 <h1 style="margin: auto;"> id: <%= usuarios[i].id %> </h1>
                 <h1 style="margin: auto;"> <%= usuarios[i].first_name %> </h1>
                 <h2 style="margin: auto;"> <%= usuarios[i].email %> </h2>
                 <h3 style="margin: auto;"> <%= usuarios[i].category %> </h3>
+                <div style="width: 346px; height: 270px;">
                 <img class="profile-img-list" src="/images/users-images/<%= usuarios[i].profile_image ? usuarios[i].profile_image : "default-profile-image.jpg" %>" alt="">
-                <br>
-                <br>
-                <a style="text-decoration: none;" href="/users/edit-user/<%= usuarios[i].id %>"><button style="display: inline;">editar</button></a>
+                </div>
+                
+                <a style="text-decoration: none;" href="/users/edit-user/<%= usuarios[i].id %>"><button style="width: 100%;" >editar</button></a>
                 
             </div>
             <br>

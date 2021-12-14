@@ -82,16 +82,16 @@ Stop doing:
 
 Retrospectiva sprint 7:
 Start Doing:
-.
+.Investigar por otros sitios web como utilizar métodos que no entiendo
 
 More of:
-.
+.Dedicar tiempo al proyecto (min 6 horas, máximo 8)
 
 Keep doing:
-.
+.Todos los dias mirar el código, para no olvidarse de que es lo que hay que hacer
 
 Less of:
-.
+.No darse tiempo para descansar bien, no hay buen rendimiento asi
 
 Stop doing:
-.
+.Subir codigo incompleto, no ser descriptivo con los commits

@@ -5,7 +5,7 @@
     
     <div class="user-detail">
 
-        <h1>Bienvenido/a <%= user.email == "martinalejandropm@gmail.com" ? "admin " + " " + user.first_name : user.first_name %> </h1>
+        <h1>Bienvenido/a <span style="color: gold"> <%= user.email == "martinalejandropm@gmail.com" ?  "admin" + " " + user.first_name : user.first_name %> </span> </h1>
         <h1>Te estabamos esperando</h1>
         
         <h2>Detalles del perfil</h2>
@@ -17,12 +17,15 @@
         
         
     </div>
-
+    <% if (user.email && user.email == "martinalejandropm@gmail.com") { %> 
     <div class="buttons-admin">
         <a href="/users"> <button>usuarios</button></a>
         <a href="/productos"><button>productos</button></a>
 
     </div>
+
+    <% } else { %> 
+        <% } %> 
     
     
     

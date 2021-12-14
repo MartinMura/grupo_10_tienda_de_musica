@@ -13,8 +13,11 @@
                 <a style="color: white; text-decoration: none;"
                     href="/productos/product-detail/<%= producto[i].id %> ">
                     <div class="producto">
+                        
 
-                        <img src="<%= producto[i].product_image ? producto[i].product_image : '/images/images-productos/imagen_articulo_por_defecto.jpg' %>"alt="">
+                        <img src="/images/images-productos/<%= producto[i].product_image ? producto[i].product_image : "imagen_articulo_por_defecto.jpg"  %> " alt="">
+
+                        
                         
                         <div class="container">
                             <p><%= producto[i].product_name %></p>

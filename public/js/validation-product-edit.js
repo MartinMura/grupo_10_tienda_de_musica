@@ -1,6 +1,6 @@
 let form = document.querySelector("form.product-edit");
 form.addEventListener("submit", function(e){
-    e.preventDefault();
+    
     let name = document.querySelector("input.product-name");
     let description = document.querySelector("#description");
     let image = document.querySelector("input#product-image");
@@ -17,10 +17,10 @@ form.addEventListener("submit", function(e){
         errores.push("La descripción debe contener al menos 20 caracteres")
     }
 
-    let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+    /* let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
     if(!allowedExtensions.exec(image.value)){
         errores.push("Las extensiones permitidas son .jpg,.jpeg, .png, .gif")
-    }
+    } */
 
     if(errores.length > 0 ){
         e.preventDefault();

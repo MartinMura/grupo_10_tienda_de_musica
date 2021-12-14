@@ -60,7 +60,11 @@ module.exports = {
                 for(let i = 0; i < products.length; i++){
                     products[i].setDataValue("detail", "http://localhost:3001/api/products/" + products[i].id)
                 }
-                
+                for (let i = 0; i < products.length; i++) {
+                    products[i].setDataValue('pathImg','http://localhost:3001/images/images-productos/' +
+                        products[i].product_image
+                    )
+                }
                 
                 res.status(200).json({
                     
@@ -134,14 +138,12 @@ module.exports = {
     productApiDetail: (req, res) => {
         db.Product.findByPk(parseInt(req.params.id))
             .then(product => {
+                
+                product.setDataValue('pathImg','http://localhost:3001/images/images-productos/' + product.product_image)
+                    
+                
                 res.status(200).json({
-                    id: product.id,
-                    product_name: product.product_name,
-                    product_description : product.product_description,
-                    category: product.category,
-                    price: product.price,
-                    stock: product.stock,
-                    product_image : product.product_image
+                    product
                 })
             })
     }

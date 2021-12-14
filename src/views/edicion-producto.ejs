@@ -4,64 +4,95 @@
 <body>
 
 
-    <main>
+	<main>
 		<h1>Editing <%= productToEdit.product_name %></h1>
-        <div class="div-form">
-            <form class="product-edit" method="POST" action="/productos/edicion-producto/<%= productToEdit.id %>?_method=PUT" enctype="multipart/form-data">
+		<div class="div-form">
+			<form class="product-edit" method="POST"
+				action="/productos/edicion-producto/<%= productToEdit.id %>?_method=PUT" enctype="multipart/form-data">
 				<div class="row product-detail">
 					<div class="col-12 col-md-6">
 						<label for="name" class="form-label">Nombre del producto:</label>
-						<input type="text" id="name" name="name"  class="form-input product-name" value="<%= productToEdit.product_name %>">
+						<input type="text" id="name" name="name" class="form-input product-name"
+							value="<%= productToEdit.product_name %>">
 					</div>
 					<div class="col-12 col-md-6">
-						<label for="price" class="form-label">Precio del producto:</label> 
-						<input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input" value="<%= productToEdit.price %>">
+						<label for="price" class="form-label">Precio del producto:</label>
+						<input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input"
+							value="<%= productToEdit.price %>">
 					</div>
-					
+
 					<div class="col-12 col-md-6">
 						<label for="product-image" class="form-label">Imagen:</label>
-						<input type="file" id="product-image" name="image" placeholder="Imagen" >
+						<input type="file" id="product-image" name="image" placeholder="Imagen">
 					</div>
 					<div class="col-12 col-md-6">
 						<label for="category" class="form-label">Categoría:</label>
 						<select name="category" id="category" class="form-input">
-							<% if ( productToEdit.category === "mic") { %> 
-							<option value="mic" selected>Microfonos</option>
-							<option value="guitar">Guitarras</option>
-                            <option value="percussion">Percusión</option>
-                            <option value="wind">Instrumentos de viento</option>
+							<% if ( productToEdit.category === "Microfonos") { %>
+							<option value="Microfonos" selected>Microfonos</option>
+							<option value="Guitarras">Guitarras</option>
+							<option value="Percusion">Percusión</option>
+							<option value="Instrumentos de viento">Instrumentos de viento</option>
+							<option value="CDs">CDs</option>
+							<option value="Vinilos">Vinilos</option>
 
-							<% } else if( productToEdit.category === "guitar"  ) { %> 
-							<option value="mic" >Microfonos</option>
-							<option value="guitar" selected>Guitarras</option>
-                            <option value="percussion">Percusión</option>
-                            <option value="wind">Instrumentos de viento</option>
+							<% } else if( productToEdit.category === "Guitarras"  ) { %>
+							<option value="Microfonos">Microfonos</option>
+							<option value="Guitarras" selected>Guitarras</option>
+							<option value="Percusion">Percusión</option>
+							<option value="Instrumentos de viento">Instrumentos de viento</option>
+							<option value="CDs">CDs</option>
+							<option value="Vinilos">Vinilos</option>
 
-							<% } else if( productToEdit.category === "percussion"  ) { %> 
-								<option value="mic" >Microfonos</option>
-								<option value="guitar" >Guitarras</option>
-								<option value="percussion" selected>Percusión</option>
-								<option value="wind">Instrumentos de viento</option>
+							<% } else if( productToEdit.category === "Percusion"  ) { %>
+							<option value="Microfonos">Microfonos</option>
+							<option value="Guitarras">Guitarras</option>
+							<option value="Percusion" selected>Percusión</option>
+							<option value="Instrumentos de viento">Instrumentos de viento</option>
+							<option value="CDs">CDs</option>
+							<option value="Vinilos">Vinilos</option>
 
-							<% } else { %> 
-								<option value="mic" >Microfonos</option>
-								<option value="guitar" >Guitarras</option>
-								<option value="percussion" >Percusión</option>
-								<option value="wind" selected>Instrumentos de viento</option>	
+							<% } else if( productToEdit.category === "CDs"  ) { %>
+								<option value="Microfonos">Microfonos</option>
+								<option value="Guitarras">Guitarras</option>
+								<option value="Percusion" >Percusión</option>
+								<option value="Instrumentos de viento">Instrumentos de viento</option>
+								<option value="CDs" selected>CDs</option>
+								<option value="Vinilos">Vinilos</option>
 
-							<% } %> 
+								<% } else if( productToEdit.category === "Vinilos"  ) { %>
+									<option value="Microfonos">Microfonos</option>
+									<option value="Guitarras">Guitarras</option>
+									<option value="Percusion" >Percusión</option>
+									<option value="Instrumentos de viento">Instrumentos de viento</option>
+									<option value="CDs" >CDs</option>
+									<option value="Vinilos" selected>Vinilos</option>
 
-								
+								<% } else { %>
+								<option value="Microfonos">Microfonos</option>
+								<option value="Guitarras">Guitarras</option>
+								<option value="Percusion">Percusión</option>
+								<option value="Instrumentos de viento" selected>Instrumentos de viento</option>
+								<option value="CDs">CDs</option>
+								<option value="Vinilos">Vinilos</option>
+
+							
+
+
+							<% } %>
+
+
 
 						</select>
 					</div>
 					<div class="col-12">
 						<label for="description" class="form-label">Descipción:</label>
-						<textarea name="description" id="description" class="form-input"><%= productToEdit.product_description %></textarea>
+						<textarea name="description" id="description"
+							class="form-input"><%= productToEdit.product_description %></textarea>
 					</div>
 					<div class="col-12">
 						<button type="submit" class="buy-now-button">Actualizar producto</button>
-						
+
 					</div>
 				</div>
 
@@ -70,12 +101,12 @@
 				</div>
 			</form>
 			<a href="/productos/delete-producto/<%= productToEdit.id %>"><button> borrar</button></a>
-        </div>
+		</div>
 
 
 
-    </main>
-<%- include('partials/footer.ejs') %>
+	</main>
+	<%- include('partials/footer.ejs') %>
 
 	<script src="/js/validation-product-edit.js"></script>
 </body>

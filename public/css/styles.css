@@ -659,7 +659,8 @@ textarea.form-input {
 /* list users */
 
 img.profile-img-list{
-    width: 200px;
+    width: 100%;
+    height: 100%;
 }
 
 div.errores{
@@ -725,7 +726,7 @@ div.producto{
     box-shadow: 0 4px 8px 0 gold;
     transition: 0.3s;
     width: 300px;
-    height: 600px;
+    height: 650px;
     border-radius: 5px;
     margin: 20px;
     margin-right: auto;
@@ -743,8 +744,11 @@ div.producto img {
     margin: auto;
 }
 
+
+
 .container {
     padding: 2px 16px;
+    
 }
 
 a.button4{
