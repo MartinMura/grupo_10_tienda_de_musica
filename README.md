@@ -9,8 +9,6 @@ la música no tiene limites ni edad
 
 Integrantes: 
 .Martin Perez Mura, 26 años, de Ciudad Autónoma de Buenos Aires.
-.Gonzalo Márquez.
-.Tomas Montu.
 
 Tablero en trello https://trello.com/b/qXPnhpMV/projecto-dh
 
