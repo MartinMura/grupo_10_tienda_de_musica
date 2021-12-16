@@ -5,6 +5,7 @@ const session = require("express-session");
 const cookie = require("cookie-parser");
 const userLoggedMiddleware = require("../middlewares/userLoggedMiddleware");
 const cors = require("cors");
+const PORT = process.env.PORT || 3001;
 
 
 const rutasMain = require("./routes/main.js");
@@ -50,8 +51,8 @@ app.use("/", rutasApiUsers);
 app.use("/", rutasApiProducts);
 
 
-app.listen(3001, () => {
-    console.log("Servidor funcionando, puerto 3001");
+app.listen(PORT, () => {
+    console.log(`Listening on ${ PORT }`);
 });
 
 
