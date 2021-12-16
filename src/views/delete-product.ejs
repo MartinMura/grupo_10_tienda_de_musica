@@ -7,8 +7,7 @@
 
     <div class="confirmacion-delete">
         <h1>Está seguro de que quiere eliminar el producto <%= productToEdit.product_name %>?</h1>
-        <img src="<%= productToEdit.product_image ? productToEdit.product_image : "imagen_articulo_por_defecto.jpg" %>"
-                            alt="">
+        <img src="/images/images-productos/<%= productToEdit.product_image %> " alt="">
         <form action="/productos/delete-producto/<%= productToEdit.id %>?_method=DELETE " method="POST">
             <br>
             <div class="button-borrar-volver">

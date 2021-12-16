@@ -6,6 +6,7 @@ const path = require("path");
 const guestMiddleware = require('../../middlewares/guestMiddleware');
 const authMiddleware = require('../../middlewares/authMiddleware');
 const userMulterMiddleware = require('../../middlewares/userMulterMiddleware');
+const adminMiddlewareProducts = require("../../middlewares/adminMiddlewareProducts")
 /* multer */
 
 
@@ -51,10 +52,10 @@ router.get("/" , usersController.list);
 router.get("/register", guestMiddleware, usersController.register);
 router.post("/register", userMulterMiddleware.single("image"), validateRegister, usersController.create);
 
-router.get("/edit-user/:id", usersController.edit)
+router.get("/edit-user/:id", adminMiddlewareProducts, usersController.edit)
 router.put("/edit-user/:id", userMulterMiddleware.single("image"), usersController.update)
 
-router.get("/delete-user/:id", usersController.delete);
+router.get("/delete-user/:id", adminMiddlewareProducts, usersController.delete);
 router.delete("/delete-user/:id", usersController.destroy);
 
 

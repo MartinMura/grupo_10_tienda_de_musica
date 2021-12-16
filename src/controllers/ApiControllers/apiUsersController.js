@@ -12,7 +12,7 @@ module.exports = {
             })  
             .then((users) => {
                 for(let i = 0; i < users.length; i++){
-                    users[i].setDataValue("detail", "http://localhost:3000/api/users/" + users[i].id)
+                    users[i].setDataValue("detail", "http://localhost:3001/api/users/" + users[i].id)
                 }
                 return res.status(200).json({
                     count: users.length,
@@ -29,12 +29,17 @@ module.exports = {
     userApiID: function(req, res) {
         db.Users.findByPk(parseInt(req.params.id))
         .then((user) => {
+            user.setDataValue('pathImg','http://localhost:3001/images/users-images/' + user.profile_image)
             res.status(200).json({
+                
                 id: user.id,
                 name: user.first_name + " " + user.last_name,
                 email: user.email,
                 address: user.address,
-                profile_image : "http://localhost:3000/users/images/profile-image/" + user.profile_image
+                pathImg: 'http://localhost:3001/images/users-images/' + user.profile_image
+
+                
+                
                 
                 
             })

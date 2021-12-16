@@ -33,15 +33,15 @@ const productController = require("../controllers/productController");
 
 router.get("/", adminMiddlewareProducts, productController.list);
 
-router.get("/detalle-producto", productController.detalleProducto);
+router.get("/detalle-producto", adminMiddlewareProducts, productController.detalleProducto);
 
-router.get("/crear-producto",  productController.crearProducto);
-router.post("/crear-producto", productMulterMiddleware.single("image"), validateProduct, productController.store);
+router.get("/crear-producto", adminMiddlewareProducts,  productController.crearProducto);
+router.post("/crear-producto", adminMiddlewareProducts, productMulterMiddleware.single("image"), validateProduct, productController.store);
 
-router.get("/edicion-producto/:id",  productController.edicionProducto);
+router.get("/edicion-producto/:id", adminMiddlewareProducts, productController.edicionProducto);
 router.put("/edicion-producto/:id", productMulterMiddleware.single("image"), productController.actualizar);
 
-router.get("/delete-producto/:id" ,productController.delete);
+router.get("/delete-producto/:id", adminMiddlewareProducts ,productController.delete);
 router.delete("/delete-producto/:id", productController.destroy);
 
 /* Client-side controllers */

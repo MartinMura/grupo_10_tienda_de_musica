@@ -625,7 +625,7 @@ div p.sin-stock{
 
 /* forms */
     .form-label {
-  display: inline-block;
+    display: inline-block;
   font-size: 1.6em;
   margin: 10px 0;
 }
@@ -840,6 +840,25 @@ div.user-detail{
     
     justify-content: space-between;
 }
+
+.botones-comprar{
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    left: 60px;
+    bottom: 100px;
+}
+
+.botones-comprar button{
+    background-color: gold;
+    border: white;
+    border-radius: 2px;
+    padding: 10px;
+    width: 100px;
+    height: 50px;
+}
+
 /* inicia la @media index */
 
 @media (max-width: 480px ) {
