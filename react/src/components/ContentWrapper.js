@@ -28,6 +28,7 @@ function ContentWrapper(){
             await fetch('http://localhost:3001/api/products')
             .then(response => response.json())
             .then(data => {
+                console.log(data);
                 setCategories(data.countByCategory);
                 setProducts(data.data);
             })
