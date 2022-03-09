@@ -4,7 +4,8 @@ module.exports = {
     "password": "c7ca5ff8",
     "database": "heroku_1596162e78197f5",
     "host": "us-cdbr-east-05.cleardb.net",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "use_env_variable": "DATABASE_URL"
   },
   "test": {
     "username": "root",
