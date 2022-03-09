@@ -33,3 +33,7 @@ min 31:02 CRUD parte del create
 
 
 14/12 estilizar el detalle del perfil, agregar más productos, cambiar color al p del index "quienes somos", cuando te registras llevar al index, y hacer la ruta de admin para ver usuarios
+
+
+
+la base de datos funciona con heroku, pero al hacer el deploy crashea
